@@ -2,8 +2,135 @@
 <html>
   <head>
     <title>ChimpsterMan</title>
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overflow-y:auto;
+      }
+      #navbar {
+        position: absolute;
+        background: rgba(51, 51, 51, 0.9);
+        width: 100%;
+        height: 7%;
+        z-index:1;
+      }
+      #navbar ul {
+        display: block;
+        text-align: center;
+      }
+      #navbar ul li {
+        display: inline-block;
+        background: black;
+        margin: 1vh 0 0 0;
+        padding: 0.25% 0 0.25% 0;
+        width: 10%;
+        overflow:hidden;
+        transition: background 0.5s ease;
+      }
+      #navbar ul li:hover {
+        background: #0e67f7;
+        cursor: default;
+      }
+      #navbar ul li a {
+        text-align: center;
+        color: white;
+        font-size: 4vh;
+        text-decoration: none;
+        transition: color 0.5s ease;
+      }
+      #navbar ul li:hover a {
+        color: black;
+        cursor: default;
+      }
+      #sectionhead {
+        font-size: 3vh;
+        text-align:center;
+      }
+      #main {
+        background-attachment:fixed;
+        display:block;
+        width: 100%;
+        height: 60vh;
+        padding-top: 40vh;
+        background: red;
+        text-align:center;
+      }
+      #mainhead {
+        font-size: 5vh;
+      }
+      #subtext{
+        color:gray;
+      }
+      #projects {
+        display: block;
+        background: #337ab7;
+        width: 100%;
+        line-height: 500%;
+        z-index:1;
+      }
+      #about {
+        display: block;
+        background: #333;
+        width: 100%;
+        line-height: 500%;
+        z-index:1;
+      }
+      #contact {
+        display: block;
+        background: #337ab7;
+        width: 100%;
+        line-height: 500%;
+        z-index:1;
+      }
+      #tabinfo {
+        text-align:center;
+        color:black;
+        font-size: 1vh;
+        
+      }
+    </style>
   </head>
   <body>
-    <h1>Test</h1>
+    <div id="navbar">
+      <ul>
+        <li>
+          <a href="#main">Home</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <div id="main">
+      <div id="mainhead">
+        <h1>ChimpsterMan</h1>
+        <h4 id="subtext">Aspiring Full Stack Coder</h4>
+      </div>
+    </div>
+    <div id="projects">
+      <div id="sectionhead">
+        <h1>Projects</h1>
+      </div>
+    </div>
+    <div id="about">
+      <div id="sectionhead">
+        <h1>About</h1>
+      </div>
+    </div>
+    <div id="contact">
+      <div id="sectionhead">
+        <h1>Contact</h1>
+      </div>
+    </div>
   </body>
 </html>
