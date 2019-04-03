@@ -70,6 +70,7 @@
       }
       #projects {
         display: block;
+        overflow-x:hidden;
         background: #337ab7;
         width: 100%;
         line-height: 500%;
@@ -89,12 +90,40 @@
         line-height: 500%;
         z-index:1;
       }
+      .tab {
+        padding-bottom:5vh;
+      }
       #tabinfo {
         text-align:center;
         color:black;
         font-size: 1vh;
+      }
+      #featurebar {
+        background: #337ab7;
+        text-align:center;
+        padding-right:2.5vw;
+        width: 100vw;
+        overflow:hidden;
+      }
+      #featurebar ul li{
+        float:left;
+        text-align:center;
+        list-style-type:none;
+        width: 25vw;
+        height: 25vw;
+        text-align:center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      #featurebar ul li a{
         
       }
+      #chat {background: url("/pics/chat.png") no-repeat fixed center;}
+      #snake {background: url("/pics/snake.png") no-repeat fixed center;}
+      #soccer {background: url("/pics/soccer.png") no-repeat fixed center;}
+      #tetris {background: url("/pics/tetris.png") no-repeat fixed center;}
     </style>
   </head>
   <body>
@@ -120,17 +149,33 @@
         <h4 id="subtext">Aspiring Full Stack Coder</h4>
       </div>
     </div>
-    <div id="projects">
+    <div id="projects" class="tab">
       <div id="sectionhead">
         <h1>Projects</h1>
       </div>
+      <div id="featurebar">
+        <ul>
+          <li id="chat">
+            
+          </li>
+          <li id="snake">
+            
+          </li>
+          <li id="soccer">
+            
+          </li>
+          <li id="tetris">
+            
+          </li>
+        </ul>
+      </div>
     </div>
-    <div id="about">
+    <div id="about" class="tab">
       <div id="sectionhead">
         <h1>About</h1>
       </div>
     </div>
-    <div id="contact">
+    <div id="contact" class="tab">
       <div id="sectionhead">
         <h1>Contact</h1>
       </div>
