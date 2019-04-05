@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>ChimpsterMan</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
       * {
         margin: 0;
@@ -119,20 +120,6 @@
         width: 80vw;
         overflow:hidden;
       }
-      #featurebar ul li{
-        float:left;
-        text-align:center;
-        list-style-type:none;
-        width: 20vw;
-        background: #484C52;
-      }
-      #featurebar ul li a img{
-        width:20vw;
-      }
-      #featurebar ul li h2 {
-        font-size:5vh;
-        line-height:150%;
-      }
     </style>
   </head>
   <body>
@@ -163,25 +150,44 @@
         <h1>Projects</h1>
       </div>
       <h1 class="subsection">Web Projects</h1>
-      <div id="featurebar">
-        <ul>
-          <li id="chat">
-            <a href="/chat"><img src="pics/chat.png"/></a>
-            <h2>Chat</h2>
-          </li>
-          <li id="snake">
-            <a href="/snake"><img src="pics/snake.png"/></a>
-            <h2>Snake</h2>
-          </li>
-          <li id="soccer">
-            <a href="/soccer"><img src="pics/soccer.png"/></a>
-            <h2>Car Soccer</h2>
-          </li>
-          <li id="tetris">
-            <a href="/tetris"><img src="pics/tetris.png"/></a>
-            <h2>Tetris</h2>
-          </li>
-        </ul>
+      <div id="featurebar" class="carousel slide carousel-fade" data-ride="carousel">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+    <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    <li data-target="#carousel-example-1z" data-slide-to="3"></li>
+  </ol>
+
+  <div class="carousel-inner" role="listbox">
+    <!--First slide-->
+    <div class="carousel-item active">
+      <a href="/chat"><img class="d-block w-100" src="pics/chat.png"/></a>
+    </div>
+    
+    <div class="carousel-item">
+      <a href="/snake"><img class="d-block w-100" src="pics/snake.png"/></a>
+    </div>
+    
+    <div class="carousel-item">
+      <a href="/soccer"><img class="d-block w-100" src="pics/soccer.png"/></a>
+    </div>
+    
+    <div class="carousel-item">
+      <a href="/tetris"><img class="d-block w-100" src="pics/tetris.png"/></a>
+    </div>
+  <!--/.Slides-->
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+<!--/.Carousel Wrapper-->
       </div>
       <h2 class="subsection">More</h2>
       <div id="tabinfo">
