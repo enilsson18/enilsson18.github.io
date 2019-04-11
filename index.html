@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,7 +11,9 @@
       padding: 0;
       }
       body {
+      background-color: black;
       overflow-y:auto;
+            background: url("https://i.pinimg.com/originals/ab/5f/0c/ab5f0c3620ee03b166ee3a94ec4cd467.jpg") no-repeat fixed center;
       }
       #navbar {
       position: absolute;
@@ -60,8 +63,8 @@
       width: 100%;
       height: 100vh;
       padding-top: 40vh;
-      background: url("/pics/bluedragon.jpg") no-repeat fixed center;
-      text-align:center;
+      background-color: rgba(0,0,0,0.7);
+      text-align: center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -69,38 +72,35 @@
       }
       #mainhead {
       font-size: 20vh;
-      text-shadow:
-      -1px -1px 0 #2CA0BA,
-      1px -1px 0 #2CA0BA,
-      -1px 1px 0 #2CA0BA,
-      1px 1px 0 #2CA0BA;
+      color: white;
+      opacity: 1.0;
       }
       #subtext{
       }
       #projects {
       display: block;
       overflow-x:hidden;
-      background: #4181EE;
+      background-image: linear-gradient(to right, #8eb9ff , #5d7fb7);
       text-align:center;
       width: 100%;
       z-index:1;
       }
       #about {
       display: block;
-      background: #333;
+      background-image: linear-gradient(to right, #1c1c1c , #000000);
       width: 100%;
       z-index:1;
+      color: white;
       }
       #contact {
       display: block;
-      background: #4181EE;
+      background-image: linear-gradient(to right, #8eb9ff , #5d7fb7);
       width: 100%;
       z-index:1;
       }
       .tab {
       padding-bottom:5vh;
       padding-top:5vh;
-      color:black;
       }
       .tabinfo {
       text-align:center;
@@ -108,7 +108,6 @@
       margin: 0 auto 0 auto;
       }
       .tabinfo span{
-      color:black;
       font-size: 24px;
       line-height:60%;
       }
@@ -196,14 +195,24 @@
     </div>
     <div id="about" class="tab">
       <div id="sectionhead">
-        <h1>About</h1>
+        <h1 style="color: white;">About</h1>
       </div>
-      <h2 class="subsection">Info</h2>
+      <center>
+            <hr style="border: 1px solid #444444; width: 50%;border-radius: 5px;">
+            </center>
       <div class="tabinfo">
-        <span>Coding Experience in: c++, java, lua, html, css, javascript,
-           and jquery.
-        </span>
+        <span>I have coding Experience in: </span> </br> <ul>
+          <li style="font-size: 25px;list-style-type: none;">C++</li>
+          <li style="font-size: 25px;list-style-type: none;">Java</li>
+          <li style="font-size: 25px;list-style-type: none;">Lua</li> 
+          <li style="font-size: 25px;list-style-type: none;">HTML,CSS</li>
+          <li style="font-size: 25px;list-style-type: none;">JavaScript</li>
+          <li style="font-size: 25px;list-style-type: none;">jQuery</li>
+           </ul>
       </div>
+      <center>
+      <hr style="border: 1px solid #444444; width: 50%;border-radius: 5px;">
+      </center>
       <h2 class="subsection">Bio</h2>
       <div class="tabinfo">
         <span>I am 16 years old and a highschool student in Ohio. 
