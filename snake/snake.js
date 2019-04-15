@@ -14,7 +14,7 @@ function setup()
 
 function reset()
 {
-	let appleX = WIDTH/2;
+	appleX = WIDTH/2;
 	appleY = HEIGHT/2;
 	pastScore = score;
 	score = 0;
