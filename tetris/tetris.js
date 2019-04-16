@@ -27,7 +27,7 @@ function draw()
 	} else {
 		time += 1;
 	}
-	//game();
+	game();
 	drawBoard();
 }
 
@@ -199,37 +199,46 @@ function Rotate(dir)
 
 function game()
 {
-	let line = -1, l = true;
-	for (let i = 0; i < 24; i++)
+  let lines = [], newBoard = [];
+  for (var i = 0; i < 24*10; i++)
+  {
+    newBoard.push(0);
+  }
+  for (var i = 0; i < board.length; i++)
+  {
+    newBoard[board[i].x/size + (10*(board[i].y/size))] = 1;
+  }
+  for (var i = 0; i < 24; i++)
+  {
+    for (var j = 0; j < 10; j++)
+    {
+      if (newBoard[j + (10*i)] != 1)
+      {
+        break;
+      }
+      if (j >= 9)
+      {
+        lines.push(i);
+      }
+    }
+  }
+  for (var j = 0; j < lines.length; j++)
+  {
+    for (let i = 0; i < board.length; i++)
+    {
+      if (board[i].y == lines[j]*size)
+	  {
+		board.splice(i,1);
+	  }
+    }
+    for (let i = 0; i < board.length; i++)
 	{
-		l = true;
-		for (let j = 0; j < 10; j++)
-		{
-			for (let g = 0; g < board.length; g++)
-			{
-				if (board[g].x != j*size && board[g].y != i*size)
-				{
-					l = false;
-					break;
-				}
-			}
-		}
-		if (l)
-		{
-			line = i;	
-		}
-	}
-	for (let i = 0; i < board.length; i++)
-	{
-		if (board[i].y == line*size)
-		{
-			board.splice(i,1);
-		}
-		if (board[i].y < line)
+		if (board[i].y < lines[j])
 		{
 			board[i].y += size;
 		}
 	}
+  }
 }
 
 function keys()

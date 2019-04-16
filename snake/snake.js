@@ -33,9 +33,6 @@ function draw()
 	if (menu == 0)
 	{
 	//input.hide();
-	fill(15, 106, 252);
-	textSize:20;
-	text("Score: " + score, 20, 40);
 	if (time == Math.round(timer))
 	{
 		moveSnake();
@@ -48,6 +45,9 @@ function draw()
 	collisionCheck();
 	drawApple();
 	drawSnake();
+  fill(15, 106, 252);
+	textSize:20;
+	text("Score: " + score, 20, 40);
 	}
 	if (menu == 1)
 	{
