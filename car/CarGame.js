@@ -27,7 +27,7 @@ function Car(x, y, width, length, speed, angle)
 	this.vX = 0;
 	this.vY = 0;
 	this.rotation = angle+90;
-	this.body = loadImage('car.png')
+	this.body = loadImage('car.png');
     	this.turnSpeed = .2;
     	this.forwardV = 0;
     	this.aV = 0;
