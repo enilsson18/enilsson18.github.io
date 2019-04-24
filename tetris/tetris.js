@@ -1,4 +1,4 @@
-let WIDTH = 0, HEIGHT = 0, time = 0, timer = 5, pieceType = 0, size = 0,
+let WIDTH = 0, HEIGHT = 0, time = 0, timer = 5, pieceType = 0, nextPiece = Math.floor(Math.random(0,7)), size = 0,
 piece = [], board = [];
 
 function setup()
@@ -87,7 +87,9 @@ function newPiece()
 	let startX = WIDTH/2, startY = 0, co = color(random(0,255),random(0,255),random(0,255));
 	piece = [];
 	//pieceType = 1;
-	pieceType = Math.floor(random(0,7));
+    pieceType = nextPiece;
+    nextPiece = Math.floor(random(0,7));
+    
 	//I
 	if (pieceType == 0)
 	{
@@ -216,7 +218,7 @@ function game()
       {
         break;
       }
-      if (j >= 9)
+      if (j == 9)
       {
         lines.push(i);
       }
@@ -233,7 +235,7 @@ function game()
     }
     for (let i = 0; i < board.length; i++)
 	{
-		if (board[i].y < lines[j])
+		if (board[i].y < lines[j]*size)
 		{
 			board[i].y += size;
 		}
