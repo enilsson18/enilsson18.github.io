@@ -27,7 +27,6 @@ function draw()
 	} else {
 		time += 1;
 	}
-	game();
 	drawBoard();
 }
 
@@ -159,6 +158,7 @@ function placePiece()
 			break;
 		}
 	}
+    game();
 	newPiece();
 }
 
