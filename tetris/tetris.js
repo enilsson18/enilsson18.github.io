@@ -330,4 +330,9 @@ function keyPressed()
 		if (piece[0].type != 1)
 			Rotate(-1);
 	}
+	if (keyCode == UP_ARROW)
+	{
+		if (piece[0].type != 1)
+			Rotate(1);
+	}
 }
