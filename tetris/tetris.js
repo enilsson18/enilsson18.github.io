@@ -1,4 +1,4 @@
-let WIDTH = 0, HEIGHT = 0, time = 0, timer = 5, pieceType = 0, nextPiece = Math.floor(Math.random(0,7)), size = 0,
+let WIDTH = 0, HEIGHT = 0, time = 0, timer = 5, nextPiece = 0, pieceType = 0, size = 0,
 piece = [], board = [];
 
 function setup()
@@ -6,7 +6,7 @@ function setup()
 	size = round(windowHeight/24);
 	WIDTH = size*10;
 	HEIGHT = size*24;
-	createCanvas(WIDTH, HEIGHT);
+	createCanvas(WIDTH+size*5, HEIGHT);
 	newPiece();
 }
 
@@ -18,7 +18,6 @@ function reset()
 
 function draw()
 {
-	background(51);
 	if (time >= timer)
 	{
 		time = 0;
@@ -28,6 +27,7 @@ function draw()
 		time += 1;
 	}
 	drawBoard();
+    drawSideBar();
 }
 
 function update()
@@ -51,8 +51,29 @@ function update()
 	}
 }
 
+function drawSideBar()
+{
+    fill("#4181EE");
+    rect(WIDTH, 0, 5*size, HEIGHT);
+    fill(51);
+    rect(WIDTH+size/2, size, 4*size, 4*size);
+    for (var i = 0; i < nextPiece.length; i++)
+    {
+      fill(nextPiece[i].c);
+      if (nextPiece[0].type == 1){
+          rect(nextPiece[i].x+size*7.5, size*2 + nextPiece[i].y + size, size, size);
+      } else if (nextPiece[0].type == 0){
+        rect(nextPiece[i].x+size*7.5, size*1.5 + nextPiece[i].y + size, size, size);
+      } else {
+        rect(nextPiece[i].x+size*7, size*2 + nextPiece[i].y + size, size, size);
+      }
+    }
+}
+
 function drawBoard()
 {
+    fill(51);
+	rect(0,0,WIDTH,HEIGHT);
 	for (let i = 0; i < board.length; i++)
 	{
 		fill(board[i].c);
@@ -86,65 +107,73 @@ function newPiece()
 	let startX = WIDTH/2, startY = 0, co = color(random(0,255),random(0,255),random(0,255));
 	piece = [];
 	//pieceType = 1;
-    pieceType = nextPiece;
-    nextPiece = Math.floor(random(0,7));
-    
-	//I
-	if (pieceType == 0)
+    if (nextPiece == 0)
+    {
+        nextPiece = pieceSetter(Math.floor(random(0,7)), startX, startY, co);
+    }
+    piece = nextPiece;
+    nextPiece = pieceSetter(Math.floor(random(0,7)), startX, startY, co);
+}
+
+function pieceSetter(p, startX, startY, co){
+  let pT = [];
+  //I
+	if (p == 0)
 	{
-		piece.push({x:startX,y:startY,c:co});
-		piece.push({x:startX-(size*2),y:startY,c:co});
-		piece.push({x:startX-size,y:startY,c:co});
-		piece.push({x:startX+size,y:startY,c:co});
+		pT.push({x:startX,y:startY,c:co,type:0});
+		pT.push({x:startX-(size*2),y:startY,c:co});
+		pT.push({x:startX-size,y:startY,c:co});
+		pT.push({x:startX+size,y:startY,c:co});
 	}
 	//BOX
-	if (pieceType == 1)
+	if (p == 1)
 	{
-		piece.push({x:startX,y:startY,c:co});
-		piece.push({x:startX-size,y:startY,c:co});
-		piece.push({x:startX-size,y:startY-size,c:co});
-		piece.push({x:startX,y:startY-size,c:co});
+		pT.push({x:startX,y:startY,c:co,type:1});
+		pT.push({x:startX-size,y:startY,c:co});
+		pT.push({x:startX-size,y:startY-size,c:co});
+		pT.push({x:startX,y:startY-size,c:co});
 	}
 	//T
-	if (pieceType == 2)
+	if (p == 2)
 	{
-		piece.push({x:startX,y:startY,c:co});
-		piece.push({x:startX+size,y:startY,c:co});
-		piece.push({x:startX-size,y:startY,c:co});
-		piece.push({x:startX,y:startY-size,c:co});
+		pT.push({x:startX,y:startY,c:co,type:2});
+		pT.push({x:startX+size,y:startY,c:co});
+		pT.push({x:startX-size,y:startY,c:co});
+		pT.push({x:startX,y:startY-size,c:co});
 	}
 	//L
-	if (pieceType == 3)
+	if (p == 3)
 	{
-		piece.push({x:startX,y:startY,c:co});
-		piece.push({x:startX+size,y:startY,c:co});
-		piece.push({x:startX-size,y:startY,c:co});
-		piece.push({x:startX+size,y:startY-size,c:co});
+		pT.push({x:startX,y:startY,c:co,type:3});
+		pT.push({x:startX+size,y:startY,c:co});
+		pT.push({x:startX-size,y:startY,c:co});
+		pT.push({x:startX+size,y:startY-size,c:co});
 	}
 	//J
-	if (pieceType == 4)
+	if (p == 4)
 	{
-		piece.push({x:startX,y:startY,c:co});
-		piece.push({x:startX+size,y:startY,c:co});
-		piece.push({x:startX-size,y:startY,c:co});
-		piece.push({x:startX-size,y:startY-size,c:co});
+		pT.push({x:startX,y:startY,c:co,type:4});
+		pT.push({x:startX+size,y:startY,c:co});
+		pT.push({x:startX-size,y:startY,c:co});
+		pT.push({x:startX-size,y:startY-size,c:co});
 	}
 	//Z
-	if (pieceType == 5)
+	if (p == 5)
 	{
-		piece.push({x:startX,y:startY,c:co});
-		piece.push({x:startX+size,y:startY,c:co});
-		piece.push({x:startX-size,y:startY-size,c:co});
-		piece.push({x:startX,y:startY-size,c:co});
+		pT.push({x:startX,y:startY,c:co,type:5});
+		pT.push({x:startX+size,y:startY,c:co});
+		pT.push({x:startX-size,y:startY-size,c:co});
+		pT.push({x:startX,y:startY-size,c:co});
 	}
 	//S
-	if (pieceType == 6)
+	if (p == 6)
 	{
-		piece.push({x:startX,y:startY,c:co});
-		piece.push({x:startX+size,y:startY-size,c:co});
-		piece.push({x:startX-size,y:startY,c:co});
-		piece.push({x:startX,y:startY-size,c:co});
+		pT.push({x:startX,y:startY,c:co,type:6});
+		pT.push({x:startX+size,y:startY-size,c:co});
+		pT.push({x:startX-size,y:startY,c:co});
+		pT.push({x:startX,y:startY-size,c:co});
 	}
+    return pT;
 }
 
 function placePiece()
@@ -293,12 +322,12 @@ function keyPressed()
 {
 	if (key == 'z' || key == 'Z')
 	{
-		if (pieceType != 1)
+		if (piece[0].type != 1)
 			Rotate(1);
 	}
 	if (key == 'x' || key == 'X')
 	{
-		if (pieceType != 1)
+		if (piece[0].type != 1)
 			Rotate(-1);
 	}
 }
