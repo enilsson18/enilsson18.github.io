@@ -7,6 +7,7 @@ function setup()
 	WIDTH = size*10;
 	HEIGHT = size*24;
 	createCanvas(WIDTH+size*5, HEIGHT);
+    strokeWeight(.5);
 	newPiece();
 }
 
