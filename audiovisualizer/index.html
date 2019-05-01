@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>repl.it</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="headings">
+            <div class="menuSection" id="fileUpload">
+                <h2>Upload a file</h2>
+                <input type="file" id="thefile" accept=".mp4,.mp3"/>
+            </div>
+            <div class="menuSection" id="recording">
+                <h2>Record</h2>
+                <div id="controls">
+                    <button id="recordButton">Record</button>
+                    <button id="pauseButton" disabled>Pause</button>
+                    <button id="stopButton" disabled>Stop</button>
+                </div>
+                <h3>Recordings</h3>
+                <ol id="recordingsList"></ol>
+            </div>
+        </div>
+        <div id="content">
+            <canvas id="canvas"></canvas>
+            <audio id="audio" controls></audio>
+        </div>
+        <script src="script.js"></script>
+        <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    </body>
+</html>

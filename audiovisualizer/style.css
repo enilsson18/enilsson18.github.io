@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background:#1E1F26;
+}
+
+#headings {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+}
+
+.menuSection {
+  margin-bottom:50px;
+}
+
+#headings h2 {
+  color:white;
+  margin-bottom:10px;
+}
+
+#headings ul{
+  
+}
+
+#headings ul li {
+  padding:10px;
+  background:#333;
+  color:white;
+}
+
+#thefile {
+  color:#1E1F26;
+}
+
+#recording {
+  display:none;
+}
+
+#canvas {
+  position: fixed;
+  bottom:150px;
+  left:50%;
+  transform: translate(-50%,0);
+}
+
+audio {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  width: calc(100% - 20px);
+}
