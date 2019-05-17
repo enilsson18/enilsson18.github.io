@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    overflow-y: auto;
+}
+
+#navbar {
+    position: absolute;
+    background: rgba(51, 51, 51, 0.5);
+    width: 100%;
+    height: 8vh;
+    z-index: 1;
+    padding: 1vh 0 1vh 0;
+}
+
+#navbar ul {
+    display: block;
+    text-align: center;
+}
+
+#navbar ul li {
+    display: inline-block;
+    background: black;
+    padding: 0.25% 0 0.25% 0;
+    width: 10%;
+    height: 100%;
+    overflow: hidden;
+    transition: background 0.5s ease;
+}
+
+#navbar ul li:hover {
+    background: #4181EE;
+    cursor: default;
+}
+
+#navbar ul li a {
+    text-align: center;
+    color: white;
+    font-size: 2vw;
+    line-height: 5vh;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+#navbar ul li:hover a {
+    color: black;
+    cursor: default;
+}
+
+#sectionhead {
+    font-size: 4vh;
+    text-align: center;
+    line-height: 350%;
+}
+
+hr.minor {
+    margin: -10px auto 15px auto;
+    border: 1px solid #444444;
+    width: 30%;
+    border-radius: 5px;
+}
+
+hr.major {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #444444;
+    width: 50%;
+    border-radius: 5px;
+}
+
+#langlist li {
+    font-size: 25px;
+    list-style-type: none;
+}
+
+#main {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    padding-top: 40vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("http://chimpsterman.me/pics/bluedragon.jpg") no-repeat fixed center;
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#mainhead {
+    font-size: 20vh;
+    color: white;
+    opacity: 1.0;
+}
+
+#subtext {}
+
+.tab {
+    display: block;
+    text-align: center;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    z-index: 1;
+}
+
+.tab:nth-child(even) {
+    background-image: linear-gradient(to right, #1c1c1c, #000000);
+    color: white;
+}
+
+.tab:nth-child(odd) {
+    background-image: linear-gradient(to right, #8eb9ff, #5d7fb7);
+    color: black;
+}
+
+.tabinfo {
+    text-align: justified;
+    width: 1000px;
+    margin: 0 auto 0 auto;
+}
+
+.tabinfo span {
+    font-size: 24px;
+    line-height: 60%;
+}
+
+.subsection {
+    font-size: 30px;
+    text-align: center;
+    line-height: 200%;
+}
+
+#featurebar {
+    text-align: center;
+    padding-right: 2.5vw;
+    margin: 0 auto 0 auto;
+    margin-bottom: 6vh;
+    width: 80vw;
+}
+
+button {
+	
+}
