@@ -1,193 +1,195 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>ChimpsterMan</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id="navbar">
-            <ul>
-                <li>
-                    <a href="#main">Home</a>
-                </li>
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#tutoring">Tutoring</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
+  <head>
+    <title>ChimpsterMan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="navbar">
+      <ul>
+        <li>
+          <a href="#main">Home</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#tutoring">Tutoring</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <div id="main">
+      <div id="mainhead">
+        <h1>ChimpsterMan</h1>
+        <h4 id="subtext">Aspiring Full Stack Coder</h4>
+      </div>
+    </div>
+    <div id="projects" class="tab">
+      <div id="sectionhead">
+        <h1>Projects</h1>
+      </div>
+      <hr class="major">
+      <h1 class="subsection">Web Projects</h1>
+      <hr class="minor">
+      <div id="featurebar" class="carousel slide" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+          <li data-target="#featurebar" data-slide-to="0" class="active"></li>
+          <li data-target="#featurebar" data-slide-to="1"></li>
+          <li data-target="#featurebar" data-slide-to="2"></li>
+          <li data-target="#featurebar" data-slide-to="3"></li>
+          <li data-target="#featurebar" data-slide-to="4"></li>
+		  <li data-target="#featurebar" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <a href="/chat"><img class="d-block w-100" src="pics/chat.png"/></a>
+          </div>
+          <div class="carousel-item">
+            <a href="/platformer"><img class="d-block w-100" src="pics/platformer.png"/></a>
+          </div>
+          <div class="carousel-item">
+            <a href="/snake"><img class="d-block w-100" src="pics/snake.png"/></a>
+          </div>
+          <div class="carousel-item">
+            <a href="/soccer"><img class="d-block w-100" src="pics/soccer.png"/></a>
+          </div>
+          <div class="carousel-item">
+            <a href="/tetris"><img class="d-block w-100" src="pics/tetris.png"/></a>
+          </div>
+          <div class="carousel-item">
+            <a href="/ttt"><img class="d-block w-100" src="pics/ttt.png"/></a>
+          </div>
+          <a class="carousel-control-prev" href="#featurebar" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#featurebar" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+          </a>
         </div>
-        <div id="main">
-            <div id="mainhead">
-                <h1>ChimpsterMan</h1>
-                <h4 id="subtext">Aspiring Full Stack Coder</h4>
-            </div>
+      </div>
+      <h2 class="subsection">Other Projects</h2>
+      <hr class="minor">
+      <ul id="otherprojects">
+        <li id="javasnake">
+          <a>
+            
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id="about" class="tab">
+      <div id="sectionhead">
+        <h1>About</h1>
+      </div>
+      <hr class="major">
+      <h2 class="subsection">Languages</h2>
+      <hr class="minor">
+      <div class="tabinfo">
+        </br> 
+        <ul id="langlist">
+          <li>C++</li>
+          <li>Java</li>
+          <li>Lua</li> 
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Node</li>
+          <li>jQuery</li>
+          <li>Unity</li>
+          <li>Unreal Engine</li>
+        </ul>
+      </div>
+      <h2 class="subsection">Bio</h2>
+      <hr class="minor">
+      <div class="tabinfo">
+        <span>I am 16 years old and a highschool student in Ohio. 
+          Since I could get my hands on computers I have always been
+          intreseted in them. I have spend many days and nights working
+          on projects in various languages. But like any coder I started humbly in 
+          modding minecraft with java. Then I moved to making games in unreal
+          and unity using c++ and c# and onto other languages and webdevelopment. Aside from coding I run Cross 
+          Country in the Fall and do Polevaulting in the spring. I am an AP 
+          student currently and spend some class time tinkering with various 
+          projects (this was written in my APUSH class). If you wish to know 
+          more about my coding experience please reffer to the info section 
+          of the About tab. Feel free to contact me if you are intrested in 
+          tutoring or have any questions.</span>
+      </div>
+    </div>
+    <div id="tutoring" class="tab">
+      <div id="sectionhead">
+        <h1>Tutoring</h1>
+      </div>
+      <hr class="major">
+      <h2 class="subsection">Description</h2>
+      <hr class="minor">
+      <div class="tabinfo">
+        <span>
+          I offer tutoring for anyone under 18 in 
+          the Cleveland Chagrin area. In 
+          addition to lessons I help the student 
+          make projects of their choosing to allow 
+          them to pursue their personal intrests 
+          and goals. All lessons are one on one with the options of a home visit for an additional fee or a video call through Discord or Skype.
+        </span>
+      </div>
+      <h2 class="subsection">Pricing</h2>
+      <hr class="minor">
+      <div class="tabinfo">
+        <span>
+          home visit fee per hour: $30<br>
+          video call fee per hour: $25
+        </span>
+      </div>
+      <h2 class="subsection">Scheduling</h2>
+      <hr class="minor">
+      <div class="tabinfo">
+        <span>
+          I am available for tutoring most evenings during the summer after 4 and on the weekends. To schedule a lesson please contact me with the following information.
+        </span>
+        <div style="text-align:left; width:70%; margin: auto;">
+        <span>
+          <br>
+          <br>
+          1. A brief description of what you want to learn.
+          <br>
+          2. The time and day that works best for you.
+          <br>
+          3. Is it an online or in person lesson?<br>
+          4. If its in person please specify the location.
+        </span>
         </div>
-        <div id="projects" class="tab">
-            <div id="sectionhead">
-                <h1>Projects</h1>
-            </div>
-            <hr class="major">
-            <h1 class="subsection">Web Projects</h1>
-            <hr class="minor">
-            <div id="featurebar" class="carousel slide" data-ride="carousel">
-                <!--Indicators-->
-                <ol class="carousel-indicators">
-                    <li data-target="#featurebar" data-slide-to="0" class="active"></li>
-                    <li data-target="#featurebar" data-slide-to="1"></li>
-                    <li data-target="#featurebar" data-slide-to="2"></li>
-                    <li data-target="#featurebar" data-slide-to="3"></li>
-                    <li data-target="#featurebar" data-slide-to="4"></li>
-                    <li data-target="#featurebar" data-slide-to="5"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                        <a href="/chat"><img class="d-block w-100" src="pics/chat.png"/></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="/platformer"><img class="d-block w-100" src="pics/platformer.png"/></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="/snake"><img class="d-block w-100" src="pics/snake.png"/></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="/soccer"><img class="d-block w-100" src="pics/soccer.png"/></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="/tetris"><img class="d-block w-100" src="pics/tetris.png"/></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="/ttt"><img class="d-block w-100" src="pics/ttt.png"/></a>
-                    </div>
-                    <a class="carousel-control-prev" href="#featurebar" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#featurebar" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-            <h2 class="subsection">Other Projects</h2>
-            <hr class="minor">
-            <ul id="otherprojects">
-                <li id="javasnake">
-                    <a>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div id="about" class="tab">
-            <div id="sectionhead">
-                <h1>About</h1>
-            </div>
-            <hr class="major">
-            <h2 class="subsection">Languages</h2>
-            <hr class="minor">
-            <div class="tabinfo">
-                </br> 
-                <ul id="langlist">
-                    <li>C++</li>
-                    <li>Java</li>
-                    <li>Lua</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Node</li>
-                    <li>jQuery</li>
-                    <li>Unity</li>
-                    <li>Unreal Engine</li>
-                </ul>
-            </div>
-            <h2 class="subsection">Bio</h2>
-            <hr class="minor">
-            <div class="tabinfo">
-                <span>I am 16 years old and a highschool student in Ohio. 
-                Since I could get my hands on computers I have always been
-                intreseted in them. I have spend many days and nights working
-                on projects in various languages. But like any coder I started humbly in 
-                modding minecraft with java. Then I moved to making games in unreal
-                and unity using c++ and c# and onto other languages and webdevelopment. Aside from coding I run Cross 
-                Country in the Fall and do Polevaulting in the spring. I am an AP 
-                student currently and spend some class time tinkering with various 
-                projects (this was written in my APUSH class). If you wish to know 
-                more about my coding experience please reffer to the info section 
-                of the About tab. Feel free to contact me if you are intrested in 
-                tutoring or have any questions.</span>
-            </div>
-        </div>
-        <div id="tutoring" class="tab">
-            <div id="sectionhead">
-                <h1>Tutoring</h1>
-            </div>
-            <hr class="major">
-            <h2 class="subsection">Description</h2>
-            <hr class="minor">
-            <div class="tabinfo">
-                <span>
-                I offer tutoring for anyone under 18 in 
-                the Cleveland Chagrin area. In 
-                addition to lessons I help the student 
-                make projects of their choosing to allow 
-                them to pursue their personal intrests 
-                and goals. All lessons are one on one with the options of a home visit for an additional fee or a video call through Discord or Skype.
-                </span>
-            </div>
-            <h2 class="subsection">Pricing</h2>
-            <hr class="minor">
-            <div class="tabinfo">
-                <span>
-                home visit fee per hour: $30<br>
-                video call fee per hour: $25
-                </span>
-            </div>
-            <h2 class="subsection">Scheduling</h2>
-            <hr class="minor">
-            <div class="tabinfo">
-                <span>
-                I am available for tutoring most evenings during the summer after 4 and on the weekends. To schedule a lesson please contact me with the following information.
-                </span>
-                <div style="text-align:left; width:500px; margin: auto;">
-                    <span>
-                    <br>
-                    <br>
-                    1. A brief description of what you want to learn.
-                    <br>
-                    2. The time and day that works best for you.
-                    <br>
-                    3. Is it an online or in person lesson?<br>
-                    4. If its in person please specify the location.
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div id="contact" class="tab">
-            <div id="sectionhead">
-                <h1>Contact</h1>
-            </div>
-            <center>
-                <hr style="border: 1px solid #444444; width: 50%;border-radius: 5px;">
-            </center>
-            <div style="color:white; text-align:center; margin:auto; font-size: 24px;">
-                <span>
-                216-402-6719<br>
-                emnilsson007@gmail.com<br>
-                ChimpsterMan#4203
-                </span>
-            </div>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    </body>
+      </div>
+    </div>
+    <div id="contact" class="tab">
+      <div id="sectionhead">
+        <h1>Contact</h1>
+      </div>
+      <center>
+      <hr style="border: 1px solid #444444; width: 50%;border-radius: 5px;">
+      </center>
+      <div style="color:white; text-align:center; margin:auto; font-size: 24px;">
+          <span>
+            216-402-6719<br>
+            emnilsson007@gmail.com<br>
+            ChimpsterMan#4203
+          </span>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>
