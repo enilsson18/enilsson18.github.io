@@ -4,7 +4,7 @@ canvas.width = window.innerHeight;
 canvas.height = window.innerHeight;
 
 var x, y, rot, fovData;
-var fov = 45, quality = 10, accuracy = 0.04;
+var fov = 45, quality = 10, accuracy = 0.02;
 var standardColor = new color(0,0,255);
 var speed = 0.08;
 var turnSpeed = 4;
