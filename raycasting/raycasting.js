@@ -6,9 +6,10 @@ canvas.height = window.innerHeight;
 var x, y, rot, fovData;
 var fov = 45, quality = 10, accuracy = 0.01;
 var standardColor = new color(0,0,255);
-var speed = 0.02;
-var turnSpeed = 1;
+var speed = 0.08;
+var turnSpeed = 4;
 var scale = canvas.width/(fov*quality);
+var globalScale = canvas.height/969;
 
 var Map = [
     [1,1,1,1,1,1,1,1,1,1,1,1],
@@ -67,7 +68,7 @@ function sense(){
 
         dist = Math.sqrt((Math.pow((x-tX),2)+Math.pow((y-tY),2)));
 
-        console.log(tX + " " + tY + " " + getQuadrant(tX,tY));
+        //console.log(tX + " " + tY + " " + getQuadrant(tX,tY));
         if (getQuadrant(tX,tY) == 1) {
             fovData.push(new fovSeg(dist, darken(standardColor.r,standardColor.g,standardColor.b,
                 canvas.height-dist)));
@@ -110,7 +111,7 @@ function boundsCheck (){
 }
 
 function darken (r,g,b, amount){
-    var factor = (amount-950)*(5/80);
+    var factor = (amount-(950*globalScale))*(5/80);
     r *= factor;
     g *= factor;
     b *= factor;
@@ -159,7 +160,7 @@ function Menu(){
 }
 
 var keyState = {};
-setInterval(keyLoop, 10);
+setInterval(keyLoop, 40);
 window.document.addEventListener('keydown', function(e) {
     keyState[e.keyCode || e.which] = true;
 }, true);
