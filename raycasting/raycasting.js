@@ -4,19 +4,19 @@ canvas.width = window.innerHeight;
 canvas.height = window.innerHeight;
 
 var x, y, rot, fovData;
-var fov = 45, quality = 5, accuracy = .005;
+var fov = 45, quality = 10, accuracy = 0.01;
 var standardColor = new color(0,0,255);
-var speed = .1;
-var turnSpeed = 10;
+var speed = 0.02;
+var turnSpeed = 1;
 var scale = canvas.width/(fov*quality);
 
 var Map = [
     [1,1,1,1,1,1,1,1,1,1,1,1],
     [1,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,9,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,1],
+    [1,0,1,0,0,0,0,0,0,0,0,1],
+    [1,0,1,1,0,0,9,0,0,0,0,1],
+    [1,0,1,1,0,0,0,0,0,0,0,1],
+    [1,0,1,0,0,0,0,0,0,0,0,1],
     [1,1,1,1,1,1,1,1,1,1,1,1]
 ];
 
@@ -37,20 +37,21 @@ function reset(){
 }
 
 function run(){
-    ctx.fillStyle = "#2B2B2B"
+    ctx.fillStyle = "#2B2B2B";
     ctx.fillRect(0,0,canvas.width,canvas.height);
     sense();
 
     for (var i = 0; i < fovData.length; i++){
         var height = canvas.height/fovData[i].dist;
         ctx.fillStyle = fovData[i].color;
-        if (canvas.height-(fovData[i].dist/10)*canvas.height < 0){
-            distance = 1;
+        if (canvas.height-height < 0){
+            height = canvas.height;
         }
-        ctx.fillRect(i*scale, (canvas.height-height)/2, quality, height);
+        ctx.fillRect(i*scale, (canvas.height-height)/2, scale+0.8, height);
     }
 
     MiniMap();
+    Menu();
 }
 
 function sense(){
@@ -64,11 +65,12 @@ function sense(){
             tY += Math.sin((natRot((rot-(fov/2))+i/quality))*(Math.PI/180))*accuracy;
         }
 
-        dist = Math.abs(Math.sqrt((Math.exp((x-tX))+Math.exp((y-tY)))));
+        dist = Math.sqrt((Math.pow((x-tX),2)+Math.pow((y-tY),2)));
 
-        //console.log(tX + " " + tY + " " + getQuadrant(tX,tY));
+        console.log(tX + " " + tY + " " + getQuadrant(tX,tY));
         if (getQuadrant(tX,tY) == 1) {
-            fovData.push(new fovSeg(dist, darken(standardColor.r,standardColor.g,standardColor.b,dist*10)));
+            fovData.push(new fovSeg(dist, darken(standardColor.r,standardColor.g,standardColor.b,
+                canvas.height-dist)));
         }
     }
 }
@@ -85,7 +87,7 @@ function color(r,g,b){
 
     this.getColor = function(){
         return "rgb(" + r + "," + g + "," + b + ")";
-    }
+    };
 }
 
 function getQuadrant(newX, newY){
@@ -108,9 +110,10 @@ function boundsCheck (){
 }
 
 function darken (r,g,b, amount){
-    r -= amount;
-    g -= amount;
-    b -= amount;
+    var factor = (amount-950)*(5/80);
+    r *= factor;
+    g *= factor;
+    b *= factor;
 
     if (r<0){
         r = 0;
@@ -120,6 +123,15 @@ function darken (r,g,b, amount){
     }
     if (b<0){
         b = 0;
+    }
+    if (r > 255) {
+        r = 255;
+    }
+    if (g > 255) {
+        g = 255;
+    }
+    if (g > 255) {
+        g = 255;
     }
     return "rgb(" + r + "," + g + "," + b + ")";
 }
@@ -139,11 +151,15 @@ function MiniMap() {
     }
 
     ctx.fillStyle = "#fff";
-    ctx.fillRect(30 + (x * 30)-5, 30 + (y * 30)-5, 10, 10);
+    ctx.fillRect(20 + (x * 30)-5, 20 + (y * 30)-5, 10, 10);
+}
+
+function Menu(){
+
 }
 
 var keyState = {};
-setInterval(keyLoop, 100);
+setInterval(keyLoop, 10);
 window.document.addEventListener('keydown', function(e) {
     keyState[e.keyCode || e.which] = true;
 }, true);
@@ -156,20 +172,71 @@ function keyLoop() {
         // left arrow
         rot -= turnSpeed;
     }
-    if (keyState[38]) {
+    if (keyState[38] || keyState[87]) {
         // up arrow
+
         x += Math.cos((natRot((rot)))*(Math.PI/180))*speed;
+        if (getQuadrant(x,y) != 0 && getQuadrant(x,y) != 9) {
+            x -= Math.cos((natRot((rot)))*(Math.PI/180))*speed;
+        }
         y += Math.sin((natRot((rot)))*(Math.PI/180))*speed;
+        if (getQuadrant(x,y) != 0 && getQuadrant(x,y) != 9) {
+            y -= Math.sin((natRot((rot)))*(Math.PI/180))*speed;
+        }
     }
     if (keyState[39]) {
         // right arrow
         rot += turnSpeed;
         rot %= 360;
     }
-    if (keyState[40]) {
+    if (keyState[40] || keyState[83]) {
         // down arrow
         x -= Math.cos((natRot((rot)))*(Math.PI/180))*speed;
+        if (getQuadrant(x,y) != 0 && getQuadrant(x,y) != 9) {
+            x += Math.cos((natRot((rot)))*(Math.PI/180))*speed;
+        }
         y -= Math.sin((natRot((rot)))*(Math.PI/180))*speed;
+        if (getQuadrant(x,y) != 0 && getQuadrant(x,y) != 9) {
+            y += Math.sin((natRot((rot)))*(Math.PI/180))*speed;
+        }
+    }
+    if (keyState[68]) {
+        x += Math.cos((natRot((rot+90)))*(Math.PI/180))*speed;
+        if (getQuadrant(x,y) != 0 && getQuadrant(x,y) != 9) {
+            x -= Math.cos((natRot((rot+90)))*(Math.PI/180))*speed;
+        }
+        y += Math.sin((natRot((rot+90)))*(Math.PI/180))*speed;
+        if (getQuadrant(x,y) != 0 && getQuadrant(x,y) != 9) {
+            y -= Math.sin((natRot((rot+90)))*(Math.PI/180))*speed;
+        }
+    }
+    if (keyState[65]) {
+        x += Math.cos((natRot((rot-90)))*(Math.PI/180))*speed;
+        if (getQuadrant(x,y) != 0 && getQuadrant(x,y) != 9) {
+            x -= Math.cos((natRot((rot-90)))*(Math.PI/180))*speed;
+        }
+        y += Math.sin((natRot((rot-90)))*(Math.PI/180))*speed;
+        if (getQuadrant(x,y) != 0 && getQuadrant(x,y) != 9) {
+            y -= Math.sin((natRot((rot-90)))*(Math.PI/180))*speed;
+        }
+    }
+    if (keyState[187]){
+        // =/+
+        if (quality < 1){
+            quality *= 2;
+        } else {
+            quality += 1;
+        }
+        scale = canvas.width / (fov * quality);
+    }
+    if (keyState[189]) {
+        // -/_
+        if (quality > 1){
+            quality -= 1;
+        } else {
+            quality /= 2;
+        }
+        scale = canvas.width/(fov*quality);
     }
     boundsCheck();
     rot = natRot(rot);
