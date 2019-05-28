@@ -151,7 +151,11 @@ function MiniMap() {
     ctx.fillRect(10, 10, mapWidth + 20, mapHeight + 20);
     for (var i = 0; i < Map.length; i++) {
         for (var j = 0; j < Map[0].length; j++) {
-            ctx.fillStyle = standardColor.getColor();
+            if (Map[i][j] == 1){
+				fillStyle = standardColor.getColor();
+			} else if (Map[i][j] == 2){
+				fillStyle = red.getColor();
+			}
             if (Map[i][j] != 0 && Map[i][j] != 9) {
                 ctx.fillRect(20 + (mapScale * j), 20 + (mapScale * i), mapScale, mapScale);
             }
