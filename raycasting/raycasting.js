@@ -6,6 +6,7 @@ canvas.height = window.innerHeight;
 var x, y, rot, fovData;
 var fov = 45, quality = 10, accuracy = 0.02;
 var standardColor = new color(0,0,255);
+var red = new color(255,0,0);
 var speed = 0.08;
 var turnSpeed = 4;
 var scale = canvas.width/(fov*quality);
@@ -14,10 +15,10 @@ var globalScale = canvas.height/969;
 var Map = [
     [1,1,1,1,1,1,1,1,1,1,1,1],
     [1,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,1,0,0,0,0,0,0,0,0,1],
-    [1,0,1,1,0,0,9,0,0,0,0,1],
-    [1,0,1,1,0,0,0,0,0,0,0,1],
-    [1,0,1,0,0,0,0,0,0,0,0,1],
+    [1,0,1,0,0,0,0,2,2,2,0,1],
+    [1,0,1,1,0,0,9,2,0,2,0,1],
+    [1,0,1,1,0,0,0,2,0,2,0,1],
+    [1,0,1,0,0,0,0,2,0,0,0,1],
     [1,1,1,1,1,1,1,1,1,1,1,1]
 ];
 
@@ -71,6 +72,10 @@ function sense(){
         //console.log(tX + " " + tY + " " + getQuadrant(tX,tY));
         if (getQuadrant(tX,tY) == 1) {
             fovData.push(new fovSeg(dist, darken(standardColor.r,standardColor.g,standardColor.b,
+                canvas.height-dist)));
+        }
+		if (getQuadrant(tX,tY) == 2) {
+            fovData.push(new fovSeg(dist, darken(red.r,red.g,red.b,
                 canvas.height-dist)));
         }
     }
@@ -138,21 +143,23 @@ function darken (r,g,b, amount){
 }
 
 function MiniMap() {
-    var mapWidth = 30 * Map[0].length;
-    var mapHeight = 30 * Map.length;
+	var mapScale = 30 * globalScale;
+	var bScale = 20 * globalScale;
+    var mapWidth = mapScale * Map[0].length;
+    var mapHeight = mapScale * Map.length;
     ctx.fillStyle = "#000";
     ctx.fillRect(10, 10, mapWidth + 20, mapHeight + 20);
     for (var i = 0; i < Map.length; i++) {
         for (var j = 0; j < Map[0].length; j++) {
             ctx.fillStyle = standardColor.getColor();
             if (Map[i][j] != 0 && Map[i][j] != 9) {
-                ctx.fillRect(20 + (30 * j), 20 + (30 * i), 30, 30);
+                ctx.fillRect(20 + (mapScale * j), 20 + (mapScale * i), mapScale, mapScale);
             }
         }
     }
 
     ctx.fillStyle = "#fff";
-    ctx.fillRect(20 + (x * 30)-5, 20 + (y * 30)-5, 10, 10);
+    ctx.fillRect(20 + (x * mapScale)-5, 20 + (y * mapScale)-5, 10, 10);
 }
 
 function Menu(){
