@@ -160,31 +160,32 @@ function darken (r,g,b, amount){
 }
 
 function MiniMap() {
-	var sizeScale = 210/Map.length;
-	var mapScale = sizeScale * globalScale;
-	var bScale = 20 * globalScale;
+    var sizeScale = 210/Map.length;
+    var mapScale = sizeScale * globalScale;
+    var bScale = 20 * globalScale;
     var mapWidth = mapScale * Map[0].length;
     var mapHeight = mapScale * Map.length;
     ctx.fillStyle = "#000";
-    ctx.fillRect(10, 10, mapWidth + 20, mapHeight + 20);
+    ctx.fillRect(bScale/2, bScale/2, mapWidth + bScale, mapHeight + bScale);
     for (var i = 0; i < Map.length; i++) {
         for (var j = 0; j < Map[0].length; j++) {
             if (Map[i][j] == 1){
-				ctx.fillStyle = standardColor.getColor();
-			} else if (Map[i][j] == 2){
-				ctx.fillStyle = red.getColor();
-			}
+                ctx.fillStyle = standardColor.getColor();
+            } else if (Map[i][j] == 2){
+                ctx.fillStyle = red.getColor();
+            }
             if (Map[i][j] != 0 && Map[i][j] != 9) {
-                ctx.fillRect(20 + (mapScale * j), 20 + (mapScale * i), mapScale, mapScale);
+                ctx.fillRect(bScale + (mapScale * j), bScale + (mapScale * i), mapScale, mapScale);
             }
         }
     }
 
-	if (mapScale/3 < 1){
-		mapScale = 3;
-	}
+    if (mapScale/3 < 1){
+        mapScale = 3;
+    }
+
     ctx.fillStyle = "#fff";
-    ctx.fillRect(20 + (x * mapScale)-5, 20 + (y * mapScale)-5, mapSize/3, mapSize/3);
+    ctx.fillRect(bScale + (x * mapScale)-(mapScale/6), bScale + (y * mapScale)-(mapScale/6), mapScale/3, mapScale/3);
 }
 
 function Menu(){
