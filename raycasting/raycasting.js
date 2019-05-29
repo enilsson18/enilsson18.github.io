@@ -180,6 +180,9 @@ function MiniMap() {
         }
     }
 
+	if (mapScale/3 < 1){
+		mapScale = 3;
+	}
     ctx.fillStyle = "#fff";
     ctx.fillRect(20 + (x * mapScale)-5, 20 + (y * mapScale)-5, mapSize/3, mapSize/3);
 }
