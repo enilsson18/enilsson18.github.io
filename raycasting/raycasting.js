@@ -50,7 +50,7 @@ function reset(){
             }
         }
     }
-    rot = 180;
+    rot = 45;
 
     const loop = setInterval(run, 25);
 }
@@ -160,7 +160,8 @@ function darken (r,g,b, amount){
 }
 
 function MiniMap() {
-	var mapScale = 30 * globalScale;
+	var sizeScale = Map.length/210;
+	var mapScale = sizeScale * globalScale;
 	var bScale = 20 * globalScale;
     var mapWidth = mapScale * Map[0].length;
     var mapHeight = mapScale * Map.length;
