@@ -1,10 +1,10 @@
 var canvas = document.getElementById("game");
 var ctx = canvas.getContext("2d");
-canvas.width = window.innerHeight;
+canvas.width = (window.innerHeight/3)*4;
 canvas.height = window.innerHeight;
 
 var x, y, rot, fovData;
-var fov = 45, quality = 10, accuracy = 0.02;
+var fov = 60, quality = 10, accuracy = 0.02;
 var standardColor = new color(0,0,255);
 var red = new color(255,0,0);
 var speed = 0.08;
@@ -160,7 +160,7 @@ function darken (r,g,b, amount){
 }
 
 function MiniMap() {
-	var sizeScale = Map.length/210;
+	var sizeScale = 210/Map.length;
 	var mapScale = sizeScale * globalScale;
 	var bScale = 20 * globalScale;
     var mapWidth = mapScale * Map[0].length;
@@ -181,7 +181,7 @@ function MiniMap() {
     }
 
     ctx.fillStyle = "#fff";
-    ctx.fillRect(20 + (x * mapScale)-5, 20 + (y * mapScale)-5, 10, 10);
+    ctx.fillRect(20 + (x * mapScale)-5, 20 + (y * mapScale)-5, mapSize/3, mapSize/3);
 }
 
 function Menu(){
