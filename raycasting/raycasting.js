@@ -52,7 +52,7 @@ function run(){
         ctx.fillRect(i*scale, (canvas.height-height)/2, scale+0.8, height);
     }
 
-    //MiniMap();
+    MiniMap();
     Menu();
 }
 
