@@ -163,13 +163,13 @@ function sense(){
         dist = Math.sqrt((Math.pow((x-tX),2)+Math.pow((y-tY),2)));
 
         //console.log(tX + " " + tY + " " + getQuadrant(tX,tY));
-        if (getQuadrant(tX,tY) == 1){
+        if (getQuadrant(tX,tY) == 3){
             fovData.push(new fovSeg(dist, false, testWall, getExactCollision(tX,tY,finalRot, testWall), black.getColor()));
         }
         if (getQuadrant(tX,tY) == 2){
             fovData.push(new fovSeg(dist, false, brickWall, getExactCollision(tX,tY,finalRot, brickWall), black.getColor()));
         }
-        if (getQuadrant(tX,tY) == 3){
+        if (getQuadrant(tX,tY) == 1){
             fovData.push(new fovSeg(dist, false, rockWall, getExactCollision(tX,tY,finalRot, rockWall), black.getColor()));
         }
         
