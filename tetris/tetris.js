@@ -19,7 +19,7 @@ function reset()
 
 function draw()
 {
-    if (time %2.5 == 0){
+    if (time % 2.5 == 0){
         keys(); 
     }
 	if (time >= timer)
