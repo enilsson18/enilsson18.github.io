@@ -14,15 +14,18 @@ function main(){
     ctx.fillStyle = "#fff";
     ctx.fillRect(0,0, canvas.width, canvas.height);
 
-
+    /*
     var p = get2dCoords(cam, new Vertex(0,0,0,0));
     ctx.fillStyle = "#000";
     ctx.beginPath();
     ctx.arc(p.x, p.y, 20, 0, 2 * Math.PI);
     ctx.fill();
+    */
 
     //console.log(p);
     //console.log(cam);
+
+    spin(cube);
 
     drawMesh(cam, cube, "#000")
 }
@@ -35,7 +38,7 @@ function drawMesh(camera, shape, color){
         var p2 = get2dCoords(camera, shape.getVertecies()[shape.connections[i][1]]);
 
         ctx.strokeStyle = "#000";
-        ctx.lineWidth = 10;
+        ctx.lineWidth = 5;
         ctx.beginPath();
         ctx.moveTo(p1.x, p1.y);
         ctx.lineTo(p2.x, p2.y);
@@ -44,18 +47,20 @@ function drawMesh(camera, shape, color){
 }
 
 function get2dCoords(camera, vertex){
-    console.log(camera.x + " " + camera.y + " " + camera.z);
+
+    //console.log(camera.x + " " + camera.y + " " + camera.z);
     var xRot = (180/Math.PI) * Math.atan2(vertex.y - camera.y, vertex.z - camera.z);
     var yRot = (180/Math.PI) * Math.atan2(vertex.z - camera.z, vertex.x - camera.x);
     //var zRot = (Math.PI/180) * Math.atan2(vertex.y - camera.y, vertex.x - camera.x);
 
-    xRot -= camera.rx-camera.fov/2;
+    xRot -= camera.rx-camera.vfov/2;
     yRot -= camera.ry-camera.fov/2;
     //zRot += camera.rz-camera.fov/2;
 
     var x = (yRot/camera.fov) * canvas.width;
-    var y = (xRot/camera.fov) * canvas.height;
-    //console.log(x/canvas.width);
+    var y = (xRot/camera.vfov) * canvas.height;
+    console.log(x/canvas.width + " " + camera.ry);
+    //console.log(y/canvas.height + " " + camera.rx);
 
     return new Point(x,y);
 }
@@ -148,6 +153,7 @@ function Camera(){
     this.ry = 90;
     this.rz = 0;
     this.fov = 60;
+    this.vfov = this.fov * (canvas.height/canvas.width);
 
     this.setProperties = function(nx, ny, nz, nrx, nry, nrz, nfov){
         this.x = nx;
@@ -189,6 +195,14 @@ function Camera(){
     }
 }
 
+function spin(shape){
+    var rot = new Rotation(0,1,0);
+
+    for (var i = 0; i < shape.vertecies.length; i++){
+        shape.vertecies[i] = rotate(shape.vertecies[i],rot);
+    }
+}
+
 var keyState = {};
 window.document.addEventListener('keydown', function(e) {
     keyState[e.keyCode || e.which] = true;
@@ -199,24 +213,25 @@ window.document.addEventListener('keyup', function(e) {
 
 function keyLoop() {
     var speed = 0.2;
+    var turnSpeed = 2;
     if (keyState[37]) {
         // left arrow
-        cam.ry -= 1;
+        cam.ry -= turnSpeed;
     }
     if (keyState[87]) {
         //w
         cam.move("forward", speed);
     }
     if (keyState[38]){
-        cam.rx -= 1;
+        cam.rx -= turnSpeed;
     }
     if (keyState[39]) {
         // right arrow
-        cam.ry += 1;
+        cam.ry += turnSpeed;
     }
     if (keyState[40]){
         //down arrow
-        cam.rx += 1;
+        cam.rx += turnSpeed;
     }
     if (keyState[83]) {
         // d
@@ -239,9 +254,58 @@ function keyLoop() {
     cam.rz = natRot(cam.rz);
 }
 
+function getDist(x1,y1,x2,y2){
+    return Math.sqrt((Math.pow((x2-x1),2)+Math.pow((y2-y1),2)));
+}
+
 function natRot(r){
     if (r < 0){
         return r + 360;
     }
     return r % 360;
+}
+
+function spin(shape){
+    var rot = new Vec(1*(Math.PI/180),2*(Math.PI/180),3*(Math.PI/180));
+
+    for (var i = 0; i < shape.vertecies.length; i++){
+        shape.vertecies[i] = rotate(shape.vertecies[i],rot);
+    }
+}
+
+function rotate(point, rotation) {
+    const sin = new Vec(
+        Math.sin(rotation.x),
+        Math.sin(rotation.y),
+        Math.sin(rotation.z));
+
+    const cos = new Vec(
+        Math.cos(rotation.x),
+        Math.cos(rotation.y),
+        Math.cos(rotation.z));
+
+    var temp1, temp2;
+
+    temp1 = cos.x * point.y + sin.x * point.z;
+    temp2 = -sin.x * point.y + cos.x * point.z;
+    point.y = temp1;
+    point.z = temp2;
+
+    temp1 = cos.y * point.x + sin.y * point.z;
+    temp2 = -sin.y * point.x + cos.y * point.z;
+    point.x = temp1;
+    point.z = temp2;
+
+    temp1 = cos.z * point.x + sin.z * point.y;
+    temp2 = -sin.z * point.x + cos.z * point.y;
+    point.x = temp1;
+    point.y = temp2;
+
+    return point;
+}
+
+function Vec(x,y,z){
+    this.x = x;
+    this.y = y;
+    this.z = z;
 }
