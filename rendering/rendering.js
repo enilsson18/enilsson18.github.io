@@ -23,7 +23,7 @@ function main(){
     */
 
     //console.log(p);
-    //console.log(cam);
+    console.log(cam);
 
     spin(cube);
 
@@ -47,7 +47,7 @@ function drawMesh(camera, shape, color){
 }
 
 function get2dCoords(camera, vertex){
-
+    /*
     //console.log(camera.x + " " + camera.y + " " + camera.z);
     var xRot = (180/Math.PI) * Math.atan2(vertex.y - camera.y, vertex.z - camera.z);
     var yRot = (180/Math.PI) * Math.atan2(vertex.z - camera.z, vertex.x - camera.x);
@@ -61,6 +61,23 @@ function get2dCoords(camera, vertex){
     var y = (xRot/camera.vfov) * canvas.height;
     console.log(x/canvas.width + " " + camera.ry);
     //console.log(y/canvas.height + " " + camera.rx);
+    */
+
+    var a = new Vec(vertex.x-camera.x, vertex.y-camera.y, vertex.z-camera.z);
+    var o = new Vec((camera.rx)*(Math.PI/180), (camera.ry)*(Math.PI/180), (camera.rz)*(Math.PI/180));
+    var d = new Vec(0,0,0);
+    var e = new Vec(0.5,0.375,1);
+
+    d.x = Math.cos(o.y)*(Math.sin(o.z)*a.y + Math.cos(o.z)*a.x) - Math.sin(o.y)*a.z;
+    d.y = Math.sin(o.x)*(Math.cos(o.y)*a.z + Math.sin(o.y)*(Math.sin(o.z)*a.y + Math.cos(o.z)*a.x)) + Math.cos(o.x)*(Math.cos(o.z)*a.y-Math.sin(o.z)*a.x);
+    d.z = Math.cos(o.x)*(Math.cos(o.y)*a.z + Math.sin(o.y)*(Math.sin(o.z)*a.y + Math.cos(o.z)*a.x)) - Math.sin(o.x)*(Math.cos(o.z)*a.y-Math.sin(o.z)*a.x);
+
+    var x = (e.z/d.z)*d.x+e.x;
+    var y = (e.z/d.z)*d.y+e.y;
+    x *= canvas.width;
+    y *= canvas.width;
+
+    //console.log(x + " " + y);
 
     return new Point(x,y);
 }
@@ -104,11 +121,11 @@ function Shape(shape, v, c){
         this.connections.push([3,7]);
     }
 
-    this.scale = function(factor){
+    this.scale = function(fx, fy, fz){
         for (var i = 0; i < this.vertecies.length; i++){
-            this.vertecies[i].x *= factor;
-            this.vertecies[i].y *= factor;
-            this.vertecies[i].z *= factor;
+            this.vertecies[i].x *= fx;
+            this.vertecies[i].y *= fy;
+            this.vertecies[i].z *= fz;
         }
     }
 
@@ -150,7 +167,7 @@ function Camera(){
     this.y = 0;
     this.z = -5;
     this.rx = 0;
-    this.ry = 90;
+    this.ry = 0;
     this.rz = 0;
     this.fov = 60;
     this.vfov = this.fov * (canvas.height/canvas.width);
@@ -166,31 +183,27 @@ function Camera(){
     };
 
     this.move = function(type, speed){
-        if (type == "forward") {
-            this.x += Math.cos(this.ry * (Math.PI / 180)) * speed;
-            this.y += Math.sin(this.rx * (Math.PI / 180)) * speed;
-            this.z += Math.sin(this.ry * (Math.PI / 180)) * speed;
-        }
-        if (type == "backward") {
-            this.x -= Math.cos(this.ry * (Math.PI / 180)) * speed;
-            this.y -= Math.sin(this.rx * (Math.PI / 180)) * speed;
-            this.z -= Math.sin(this.ry * (Math.PI / 180)) * speed;
-        }
         if (type == "right") {
-            this.x += Math.cos((this.ry + 90) * (Math.PI / 180)) * speed;
-            this.y += Math.sin((this.rx) * (Math.PI / 180)) * speed;
-            this.z += Math.sin((this.ry + 90) * (Math.PI / 180)) * speed;
+            this.z += Math.cos((this.ry+90) * (Math.PI / 180)) * speed;
+            this.x += Math.sin((this.ry+90) * (Math.PI / 180)) * speed;
         }
         if (type == "left") {
-            this.x -= Math.cos((this.ry + 90) * (Math.PI / 180)) * speed;
-            this.y -= Math.sin((this.rx) * (Math.PI / 180)) * speed;
-            this.z -= Math.sin((this.ry + 90) * (Math.PI / 180)) * speed;
+            this.z += Math.cos((this.ry-90) * (Math.PI / 180)) * speed;
+            this.x += Math.sin((this.ry-90) * (Math.PI / 180)) * speed;
+        }
+        if (type == "forward") {
+            this.z += Math.cos((this.ry) * (Math.PI / 180)) * speed;
+            this.x += Math.sin((this.ry) * (Math.PI / 180)) * speed;
+        }
+        if (type == "backward") {
+            this.z -= Math.cos((this.ry) * (Math.PI / 180)) * speed;
+            this.x -= Math.sin((this.ry) * (Math.PI / 180)) * speed;
         }
         if (type == "up") {
-            this.y += Math.sin((this.rx - 90) * (Math.PI / 180)) * speed;
+            this.y -= Math.cos((this.rx) * (Math.PI / 180)) * speed;
         }
         if (type == "down") {
-            this.y -= Math.sin((this.rx - 90) * (Math.PI / 180)) * speed;
+            this.y += Math.cos((this.rx) * (Math.PI / 180)) * speed;
         }
     }
 }
@@ -223,7 +236,7 @@ function keyLoop() {
         cam.move("forward", speed);
     }
     if (keyState[38]){
-        cam.rx -= turnSpeed;
+        cam.rx += turnSpeed;
     }
     if (keyState[39]) {
         // right arrow
@@ -231,7 +244,7 @@ function keyLoop() {
     }
     if (keyState[40]){
         //down arrow
-        cam.rx += turnSpeed;
+        cam.rx -= turnSpeed;
     }
     if (keyState[83]) {
         // d
@@ -254,8 +267,8 @@ function keyLoop() {
     cam.rz = natRot(cam.rz);
 }
 
-function getDist(x1,y1,x2,y2){
-    return Math.sqrt((Math.pow((x2-x1),2)+Math.pow((y2-y1),2)));
+function getDist(x1,y1,z1,x2,y2,z2){
+    return Math.sqrt((Math.pow((x2-x1),2)+Math.pow((y2-y1),2) + Math.pow((z2-z1),2)));
 }
 
 function natRot(r){
