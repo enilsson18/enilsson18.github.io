@@ -1,3 +1,4 @@
+var defColor = "#00F";
 //cube
 var v = [];
 v.push(new Vertex(-1, -1, -1, 0));
@@ -44,6 +45,22 @@ c.push([3,2,6]);
 c.push([2,1,5]);
 c.push([2,6,5]);
 
-var Cube = new Model(v,c,"#00F");
-
+var Cube = new Model(v,c,defColor);
+v = [];
+c = [];
 ///////////////////////////////////////////////////////////////////////////////
+//square
+v.push(new Vertex(0,-1,-1,0));
+v.push(new Vertex(0,1,-1,1));
+v.push(new Vertex(0,1,1,2));
+v.push(new Vertex(0,-1,1,3));
+
+c.push([0,1,2]);
+c.push([0,3,2]);
+
+var Square = new Model(v,c,defColor);
+v = [];
+c = [];
+///////////////////////////////////////////////////////////////////////////////
+//pyramid
+

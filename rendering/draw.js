@@ -28,7 +28,7 @@ function renderScene(camera, shapes) {
 
             var avg = (p1.dist + p2.dist + p3.dist) / 3;
             for (var j = 0; j < renderedSurfaces.length; j++) {
-                if (avg > (renderedSurfaces[j][0].dist + renderedSurfaces[j][1].dist + renderedSurfaces[j][2].dist) / 3) {
+                if (avg > (renderedSurfaces[j][0].dist + renderedSurfaces[j][1].dist + renderedSurfaces[j][2].dist)/3) {
                     renderedSurfaces.splice(j, 0, [p1, p2, p3, shapes[g].color]);
                     break;
                 }
