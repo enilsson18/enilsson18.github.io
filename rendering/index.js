@@ -6,10 +6,14 @@ canvas.height = window.innerHeight;
 var fps = 30;
 var loop = setInterval(main, 1000/fps);
 var cam = new Camera();
-var cube = Object.assign({}, Cube);;
+var cube1 = Object.assign({}, Cube);;
 var cube2 = Object.assign({}, Cube);
+var blue = new Color(0,0,255,0);
+var scene = [cube1,cube2];
+
 cube2.x = 2;
-var blue = new Color(0,0,255,0)
+cube2.color = "#F00";
+
 
 setInterval(keyLoop, 40);
 
@@ -26,11 +30,10 @@ function main(){
     */
 
     //console.log(p);
-    console.log(cam);
+    //console.log(cam, scene);
 
     //spin(cube);
-    drawShape(cam, cube2, "#f00");
-    drawShape(cam, cube, "#00f");
+    renderScene(cam, scene)
 }
 
 

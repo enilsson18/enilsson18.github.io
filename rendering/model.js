@@ -1,9 +1,10 @@
-function Model(v, c){
+function Model(v, c, color){
     this.x = 0;
     this.y = 0;
     this.z = 0;
     this.vertecies = v;
     this.surfaces = c;
+    this.color = color;
 
     this.scale = function(fx, fy, fz){
         for (var i = 0; i < this.vertecies.length; i++){

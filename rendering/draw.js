@@ -16,18 +16,31 @@ function drawMesh(camera, shape, color){
     }
 }
 
-function drawShape(camera, shape, color) {
-    ctx.strokeStyle = "#000";
-    ctx.fillStyle = color;
-
+function renderScene(camera, shapes) {
     var renderedSurfaces = [];
 
-    for (var i = 0; i < shape.surfaces.length; i++){
-        var p1 = get2dCoords(camera, shape.getVertecies()[shape.surfaces[i][0]]);
-        var p2 = get2dCoords(camera, shape.getVertecies()[shape.surfaces[i][1]]);
-        var p3 = get2dCoords(camera, shape.getVertecies()[shape.surfaces[i][2]]);
+    for (var g = 0; g < shapes.length; g++)
+    {
+        for (var i = 0; i < shapes[g].surfaces.length; i++) {
+            var p1 = get2dCoords(camera, shapes[g].getVertecies()[shapes[g].surfaces[i][0]]);
+            var p2 = get2dCoords(camera, shapes[g].getVertecies()[shapes[g].surfaces[i][1]]);
+            var p3 = get2dCoords(camera, shapes[g].getVertecies()[shapes[g].surfaces[i][2]]);
 
-        renderedSurfaces.push([p1,p2,p3]);
+            var avg = (p1.dist + p2.dist + p3.dist) / 3;
+            for (var j = 0; j < renderedSurfaces.length; j++) {
+                if (avg > (renderedSurfaces[j][0].dist + renderedSurfaces[j][1].dist + renderedSurfaces[j][2].dist) / 3) {
+                    renderedSurfaces.splice(j, 0, [p1, p2, p3, shapes[g].color]);
+                    break;
+                }
+                if (j == renderedSurfaces.length - 1) {
+                    renderedSurfaces.push([p1, p2, p3, shapes[g].color]);
+                    break;
+                }
+            }
+            if (renderedSurfaces.length <= 0) {
+                renderedSurfaces.push([p1, p2, p3, shapes[g].color]);
+            }
+        }
     }
 
     for (var i = 0; i < renderedSurfaces.length; i++){
@@ -36,6 +49,8 @@ function drawShape(camera, shape, color) {
         p3 = renderedSurfaces[i][2];
 
         if (p1 != null && p2 != null && p3 != null) {
+            ctx.strokeStyle = renderedSurfaces[i][3];
+            ctx.fillStyle = renderedSurfaces[i][3];
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
