@@ -22,41 +22,55 @@ function renderScene(camera, shapes) {
     for (var g = 0; g < shapes.length; g++)
     {
         for (var i = 0; i < shapes[g].surfaces.length; i++) {
-            var p1 = get2dCoords(camera, shapes[g].getVertecies()[shapes[g].surfaces[i][0]]);
-            var p2 = get2dCoords(camera, shapes[g].getVertecies()[shapes[g].surfaces[i][1]]);
-            var p3 = get2dCoords(camera, shapes[g].getVertecies()[shapes[g].surfaces[i][2]]);
+            var ps = [];
+            var verts = [];
+            var avg = shapes[g].surfaces[i].avg;
+            for (var j = 0; j < shapes[g].surfaces[i].points.length; j++) {
+                ps.push(get2dCoords(camera, shapes[g].getVertecies()[shapes[g].surfaces[i].points[j]]));
+                verts.push(shapes[g].getVertecies()[shapes[g].surfaces[i].points[j]]);
+            }
 
-            var avg = (p1.dist + p2.dist + p3.dist) / 3;
+            var temp = new Vertex(0,0,0,0);
+            for (var j = 0; j < verts.length; j++){
+                temp.x += verts[j].x;
+                temp.y += verts[j].y;
+                temp.z += verts[j].z;
+            }
+            temp.x /= verts.length;
+            temp.y /= verts.length;
+            temp.z /= verts.length;
+            var avg = getDist(temp.x,temp.y,temp.z,camera.x,camera.y,camera.z);
+
             for (var j = 0; j < renderedSurfaces.length; j++) {
-                if (avg > (renderedSurfaces[j][0].dist + renderedSurfaces[j][1].dist + renderedSurfaces[j][2].dist)/3) {
-                    renderedSurfaces.splice(j, 0, [p1, p2, p3, shapes[g].color]);
+                if (avg > renderedSurfaces[j][0].avg) {
+                    renderedSurfaces.splice(j, 0, [new PointList(ps,avg), shapes[g].color]);
                     break;
                 }
                 if (j == renderedSurfaces.length - 1) {
-                    renderedSurfaces.push([p1, p2, p3, shapes[g].color]);
+                    renderedSurfaces.push([new PointList(ps,avg), shapes[g].color]);
                     break;
                 }
             }
             if (renderedSurfaces.length <= 0) {
-                renderedSurfaces.push([p1, p2, p3, shapes[g].color]);
+                renderedSurfaces.push([new PointList(ps,avg), shapes[g].color]);
             }
         }
     }
 
     for (var i = 0; i < renderedSurfaces.length; i++){
-        p1 = renderedSurfaces[i][0];
-        p2 = renderedSurfaces[i][1];
-        p3 = renderedSurfaces[i][2];
+        var ps = renderedSurfaces[i][0].points;
 
-        if (p1 != null && p2 != null && p3 != null) {
-            ctx.strokeStyle = renderedSurfaces[i][3];
-            ctx.fillStyle = renderedSurfaces[i][3];
+        if (!ps.includes(null)) {
+            ctx.strokeStyle = "#000";
+            //ctx.strokeStyle = renderedSurfaces[i][1];
+            ctx.fillStyle = renderedSurfaces[i][1];
             ctx.lineWidth = 1;
             ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.lineTo(p3.x, p3.y);
-            ctx.lineTo(p1.x, p1.y);
+            ctx.moveTo(ps[0].x, ps[0].y);
+            for (var j = 1; j < ps.length; j++){
+                ctx.lineTo(ps[j].x, ps[j].y);
+            }
+            ctx.lineTo(ps[0].x,ps[0].y);
             ctx.closePath();
             ctx.stroke();
             ctx.fill();

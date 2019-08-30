@@ -17,11 +17,25 @@ function Point(x,y, dist){
     this.dist = dist;
 }
 
+function PointList(points, avg){
+    this.points = points;
+    this.avg = avg;
+}
+
 function Vertex(nx, ny, nz, id){
     this.x = nx;
     this.y = ny;
     this.z = nz;
     this.id = id;
+}
+
+function Surface(points){
+    this.points = points;
+    this.avg = 0;
+    for (var i = 0; i < this.points.length; i++){
+        this.avg += this.points[i];
+    }
+    this.avg /= this.points.length;
 }
 
 function natRot(r){

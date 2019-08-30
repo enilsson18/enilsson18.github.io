@@ -24,14 +24,13 @@ function get2dCoords(camera, vertex){
     d.y = Math.sin(o.x)*(Math.cos(o.y)*a.z + Math.sin(o.y)*(Math.sin(o.z)*a.y + Math.cos(o.z)*a.x)) + Math.cos(o.x)*(Math.cos(o.z)*a.y-Math.sin(o.z)*a.x);
     d.z = Math.cos(o.x)*(Math.cos(o.y)*a.z + Math.sin(o.y)*(Math.sin(o.z)*a.y + Math.cos(o.z)*a.x)) - Math.sin(o.x)*(Math.cos(o.z)*a.y-Math.sin(o.z)*a.x);
 
+    var dist = getDist(vertex.x,vertex.y,vertex.z,camera.x,camera.y,camera.z);
     var x = (e.z/d.z)*d.x+e.x;
     var y = (e.z/d.z)*d.y+e.y;
-    x *= canvas.width;
-    y *= canvas.width;
+    x = (d.x*canvas.width)/((dist - e.z)*e.x)*e.z + canvas.width/2;
+    y = (d.y*canvas.height)/((dist - e.z)*e.y)*e.z + canvas.height/2;
 
     //console.log(x + " " + y);
-
-    var dist = getDist(vertex.x,vertex.y,vertex.z,camera.x,camera.y,camera.z);
 
     var nx = camera.x + Math.sin(camera.ry*(Math.PI/180))*dist;
     var ny = camera.y + Math.cos(camera.rx*(Math.PI/180))*dist;
@@ -41,7 +40,6 @@ function get2dCoords(camera, vertex){
     if (getDist(nx,ny,nz,vertex.x,vertex.y,vertex.z) > dist*2){
         return null;
     }
-
 
     return new Point(x,y,dist);
 }

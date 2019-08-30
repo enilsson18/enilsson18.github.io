@@ -8,11 +8,19 @@ var loop = setInterval(main, 1000/fps);
 var cam = new Camera();
 var cube1 = Object.assign({}, Cube);;
 var cube2 = Object.assign({}, Cube);
+var py = Object.assign({}, Pyramid);
+var py2 = Object.assign({}, Pyramid);
 var blue = new Color(0,0,255,0);
-var scene = [cube1,cube2];
+var scene = [cube1,cube2,py,py2];
 
-cube2.x = 2;
+py.y = -2;
+py2.y = -2;
+py2.x = 1;
+cube2.x = 1;
+cube1.x = -1;
+py.x = -1;
 cube2.color = "#F00";
+py2.color = "#F00";
 
 
 setInterval(keyLoop, 40);
@@ -32,7 +40,7 @@ function main(){
     //console.log(p);
     //console.log(cam, scene);
 
-    //spin(cube);
+    //spin(cube1);
     renderScene(cam, scene)
 }
 
@@ -50,7 +58,7 @@ window.document.addEventListener('keyup', function(e) {
 
 function keyLoop() {
     var speed = 0.2;
-    var turnSpeed = 2;
+    var turnSpeed = 1.5;
     if (keyState[37]) {
         // left arrow
         cam.ry -= turnSpeed;
@@ -60,7 +68,11 @@ function keyLoop() {
         cam.move("forward", speed);
     }
     if (keyState[38]){
-        cam.rx += turnSpeed;
+        if (cam.rx + turnSpeed >= 270 || cam.rx + turnSpeed <= 90){
+            cam.rx += turnSpeed;
+        } else {
+            cam.rx = 90;
+        }
     }
     if (keyState[39]) {
         // right arrow
@@ -68,7 +80,11 @@ function keyLoop() {
     }
     if (keyState[40]){
         //down arrow
-        cam.rx -= turnSpeed;
+        if (cam.rx -turnSpeed >= 270 || cam.rx - turnSpeed <= 90){
+            cam.rx -= turnSpeed;
+        } else {
+            cam.rx = 270;
+        }
     }
     if (keyState[83]) {
         // d
