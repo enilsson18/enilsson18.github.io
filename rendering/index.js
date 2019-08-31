@@ -32,6 +32,7 @@ py2.paint(new Color(255,0,0));
 
 
 setInterval(function(){defaultKeyLoop(cam)}, 1000/fps);
+mouseControl = true;
 
 function main(){
     ctx.fillStyle = "#fff";

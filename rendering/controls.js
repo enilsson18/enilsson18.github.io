@@ -1,4 +1,28 @@
 //setup vars for key reading
+
+var mouseControl = false;
+var mouseSpeedScale = 16;
+var cam;
+var cv = document.getElementById('game');
+
+document.addEventListener('mousemove', mouseMovement);
+cv.addEventListener('mousedown', mouseClicks);
+
+function mouseMovement(event){
+    if (document.pointerLockElement === cv && mouseControl){
+        cam.rotate("y",event.movementX/(mouseSpeedScale));
+        cam.rotate("x",-event.movementY/(mouseSpeedScale));
+    }
+}
+
+function mouseClicks(event){
+    if (document.pointerLockElement != cv && mouseControl){
+        if (event.button == 0){
+            cv.requestPointerLock();
+        }
+    }
+}
+
 var keyState = {};
 window.document.addEventListener('keydown', function(e) {
     keyState[e.keyCode || e.which] = true;
@@ -11,6 +35,7 @@ window.document.addEventListener('keyup', function(e) {
 function defaultKeyLoop(camera) {
     var speed = 0.1;
     var turnSpeed = 0.5;
+    cam = camera;
 
     if (keyState[38]){
         //up arrow
