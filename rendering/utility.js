@@ -1,3 +1,9 @@
+
+
+function clone(object){
+    return _u.cloneDeep(object);
+}
+
 function Vec(x,y,z){
     this.x = x;
     this.y = y;

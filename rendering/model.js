@@ -10,7 +10,9 @@ function Model(v, c, x=0, y=0, z=0, rx=0, ry=0, rz=0){
 
     this.paint = function(color){
         for(var i = 0; i < this.surfaces.length; i++){
-            this.surfaces[i].color = color;
+            var s = Object.assign({}, this.surfaces[i]);
+            s.color = color;
+            this.surfaces[i] = s;
         }
     }
 
