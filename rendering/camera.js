@@ -1,10 +1,10 @@
-function Camera(){
-    this.x = 0;
-    this.y = 0;
-    this.z = -5;
-    this.rx = 0;
-    this.ry = 0;
-    this.rz = 0;
+function Camera(x = 0,y = 0,z = 0,rx = 0,ry = 0,rz = 0){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.rx = rx;
+    this.ry = ry;
+    this.rz = rz;
     this.fov = 60;
     this.vfov = this.fov * (canvas.height/canvas.width);
 
@@ -40,6 +40,16 @@ function Camera(){
         }
         if (type == "down") {
             this.y += Math.cos((this.rx) * (Math.PI / 180)) * speed;
+        }
+    }
+
+    this.rotate = function(axis, amount){
+        if (axis == "x"){
+            this.rx = natRot(this.rx+amount);
+        } else if(axis == "y"){
+            this.ry = natRot(this.ry+amount);
+        } else if(axis == "z"){
+            this.rz = natRot(this.rz+amount);
         }
     }
 }

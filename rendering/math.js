@@ -1,3 +1,4 @@
+//projects a 3d point onto a 2d plane in this case the screen
 function get2dCoords(camera, vertex){
     /*
     //console.log(camera.x + " " + camera.y + " " + camera.z);
@@ -15,27 +16,37 @@ function get2dCoords(camera, vertex){
     //console.log(y/canvas.height + " " + camera.rx);
     */
 
+    //a is the camera looking at the vertex while being adjusted to the origin for math reasons
+    //o is the adjusted rotations so they are in radical form and ready for equations
+    //d is the thing out translated coords will go to
+    //e is the adjustment of the viewing plane
     var a = new Vec(vertex.x-camera.x, vertex.y-camera.y, vertex.z-camera.z);
     var o = new Vec((camera.rx)*(Math.PI/180), (camera.ry)*(Math.PI/180), (camera.rz)*(Math.PI/180));
     var d = new Vec(0,0,0);
-    var e = new Vec(0.5,0.375,1);
+    //if warping change the first 2 to match screen res width should be 0.5 always in x value
+    var e = new Vec(0.5,0.281,1);
 
+    //projection equations
     d.x = Math.cos(o.y)*(Math.sin(o.z)*a.y + Math.cos(o.z)*a.x) - Math.sin(o.y)*a.z;
     d.y = Math.sin(o.x)*(Math.cos(o.y)*a.z + Math.sin(o.y)*(Math.sin(o.z)*a.y + Math.cos(o.z)*a.x)) + Math.cos(o.x)*(Math.cos(o.z)*a.y-Math.sin(o.z)*a.x);
     d.z = Math.cos(o.x)*(Math.cos(o.y)*a.z + Math.sin(o.y)*(Math.sin(o.z)*a.y + Math.cos(o.z)*a.x)) - Math.sin(o.x)*(Math.cos(o.z)*a.y-Math.sin(o.z)*a.x);
 
     var dist = getDist(vertex.x,vertex.y,vertex.z,camera.x,camera.y,camera.z);
+    //simple form for static only no rotation
     var x = (e.z/d.z)*d.x+e.x;
     var y = (e.z/d.z)*d.y+e.y;
+
+    //complex rotation version
+    //adjusts the picture so it looks nice and centered along with adaptation for screen
     x = (d.x*canvas.width)/((dist - e.z)*e.x)*e.z + canvas.width/2;
     y = (d.y*canvas.height)/((dist - e.z)*e.y)*e.z + canvas.height/2;
 
     //console.log(x + " " + y);
 
+    //this eliminates a glitch where point renders 180 degrees behind person (duplicate glitch)
     var nx = camera.x + Math.sin(camera.ry*(Math.PI/180))*dist;
     var ny = camera.y + Math.cos(camera.rx*(Math.PI/180))*dist;
     var nz = camera.z + Math.cos(camera.ry*(Math.PI/180))*dist;
-
 
     if (getDist(nx,ny,nz,vertex.x,vertex.y,vertex.z) > dist*2){
         return null;
@@ -44,6 +55,8 @@ function get2dCoords(camera, vertex){
     return new Point(x,y,dist);
 }
 
+//math behind spining a 3d point about the origin
+//both rotations and 3d points are represented as a class called Vec
 function rotate(point, rotation) {
     const sin = new Vec(
         Math.sin(rotation.x),

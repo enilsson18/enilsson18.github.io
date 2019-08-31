@@ -1,16 +1,23 @@
+//canvas setup
 var canvas = document.getElementById("game");
 var ctx = canvas.getContext("2d");
-canvas.width = (window.innerHeight/3)*4;
-canvas.height = window.innerHeight;
+
+//scale canvas to fit screen size at 16:9 res
+if (window.innerWidth >= window.innerHeight) {
+    canvas.width = (window.innerHeight / 9) * 16;
+    canvas.height = window.innerHeight;
+} else {
+    canvas.height = (window.innerWidth / 16) * 9;
+    canvas.width = window.innerWidth;
+}
 
 var fps = 30;
 var loop = setInterval(main, 1000/fps);
-var cam = new Camera();
+var cam = new Camera(-10,-15,-10,315,45,0);
 var cube1 = Object.assign({}, Cube);;
 var cube2 = Object.assign({}, Cube);
 var py = Object.assign({}, Pyramid);
 var py2 = Object.assign({}, Pyramid);
-var blue = new Color(0,0,255,0);
 var scene = [cube1,cube2,py,py2];
 
 py.y = -2;
@@ -23,86 +30,11 @@ cube2.color = "#F00";
 py2.color = "#F00";
 
 
-setInterval(keyLoop, 40);
+setInterval(function(){defaultKeyLoop(cam)}, 40);
 
 function main(){
     ctx.fillStyle = "#fff";
     ctx.fillRect(0,0, canvas.width, canvas.height);
 
-    /*
-    var p = get2dCoords(cam, new Vertex(0,0,0,0));
-    ctx.fillStyle = "#000";
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, 20, 0, 2 * Math.PI);
-    ctx.fill();
-    */
-
-    //console.log(p);
-    //console.log(cam, scene);
-
-    //spin(cube1);
     renderScene(cam, scene)
-}
-
-
-//classes
-//everything is made out of vertecies and triangles
-
-var keyState = {};
-window.document.addEventListener('keydown', function(e) {
-    keyState[e.keyCode || e.which] = true;
-}, true);
-window.document.addEventListener('keyup', function(e) {
-    keyState[e.keyCode || e.which] = false;
-}, true);
-
-function keyLoop() {
-    var speed = 0.2;
-    var turnSpeed = 1.5;
-    if (keyState[37]) {
-        // left arrow
-        cam.ry -= turnSpeed;
-    }
-    if (keyState[87]) {
-        //w
-        cam.move("forward", speed);
-    }
-    if (keyState[38]){
-        if (cam.rx + turnSpeed >= 270 || cam.rx + turnSpeed <= 90){
-            cam.rx += turnSpeed;
-        } else {
-            cam.rx = 90;
-        }
-    }
-    if (keyState[39]) {
-        // right arrow
-        cam.ry += turnSpeed;
-    }
-    if (keyState[40]){
-        //down arrow
-        if (cam.rx -turnSpeed >= 270 || cam.rx - turnSpeed <= 90){
-            cam.rx -= turnSpeed;
-        } else {
-            cam.rx = 270;
-        }
-    }
-    if (keyState[83]) {
-        // d
-        cam.move("backward", speed);
-    }
-    if (keyState[68]) {
-        cam.move("right", speed);
-    }
-    if (keyState[65]) {
-        cam.move("left", speed);
-    }
-    if (keyState[32]){
-        cam.move("up", speed);
-    }
-    if (keyState[16]){
-        cam.move("down", speed);
-    }
-    cam.rx = natRot(cam.rx);
-    cam.ry = natRot(cam.ry);
-    cam.rz = natRot(cam.rz);
 }
