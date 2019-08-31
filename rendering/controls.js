@@ -9,8 +9,8 @@ window.document.addEventListener('keyup', function(e) {
 
 //default controls for the camera
 function defaultKeyLoop(camera) {
-    var speed = 0.2;
-    var turnSpeed = 1.5;
+    var speed = 0.1;
+    var turnSpeed = 0.5;
 
     if (keyState[38]){
         //up arrow

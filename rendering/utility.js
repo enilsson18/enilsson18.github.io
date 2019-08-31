@@ -4,11 +4,15 @@ function Vec(x,y,z){
     this.z = z;
 }
 
-function Color(r,g,b,a){
+function Color(r,g,b, a = 1){
     this.r = r;
     this.g = g;
     this.b = b;
     this.a = a;
+
+    this.getColor = function(){
+        return "rgba(" + this.r + "," + this.g + "," + this.b + "," + this.a + ")";
+    };
 }
 
 function Point(x,y, dist){
@@ -29,8 +33,9 @@ function Vertex(nx, ny, nz, id){
     this.id = id;
 }
 
-function Surface(points){
+function Surface(points, color){
     this.points = points;
+    this.color = color;
     this.avg = 0;
     for (var i = 0; i < this.points.length; i++){
         this.avg += this.points[i];

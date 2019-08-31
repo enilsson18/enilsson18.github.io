@@ -25,6 +25,8 @@ function renderScene(camera, shapes) {
             var ps = [];
             var verts = [];
             var avg = shapes[g].surfaces[i].avg;
+            var color = shapes[g].surfaces[i].color;
+
             for (var j = 0; j < shapes[g].surfaces[i].points.length; j++) {
                 ps.push(get2dCoords(camera, shapes[g].getVertecies()[shapes[g].surfaces[i].points[j]]));
                 verts.push(shapes[g].getVertecies()[shapes[g].surfaces[i].points[j]]);
@@ -43,16 +45,16 @@ function renderScene(camera, shapes) {
 
             for (var j = 0; j < renderedSurfaces.length; j++) {
                 if (avg > renderedSurfaces[j][0].avg) {
-                    renderedSurfaces.splice(j, 0, [new PointList(ps,avg), shapes[g].color]);
+                    renderedSurfaces.splice(j, 0, [new PointList(ps,avg), color]);
                     break;
                 }
                 if (j == renderedSurfaces.length - 1) {
-                    renderedSurfaces.push([new PointList(ps,avg), shapes[g].color]);
+                    renderedSurfaces.push([new PointList(ps,avg), color]);
                     break;
                 }
             }
             if (renderedSurfaces.length <= 0) {
-                renderedSurfaces.push([new PointList(ps,avg), shapes[g].color]);
+                renderedSurfaces.push([new PointList(ps,avg), color]);
             }
         }
     }
@@ -62,8 +64,8 @@ function renderScene(camera, shapes) {
 
         if (!ps.includes(null)) {
             ctx.strokeStyle = "#000";
-            //ctx.strokeStyle = renderedSurfaces[i][1];
-            ctx.fillStyle = renderedSurfaces[i][1];
+            //ctx.strokeStyle = renderedSurfaces[i][1].getColor();
+            ctx.fillStyle = renderedSurfaces[i][1].getColor();
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(ps[0].x, ps[0].y);

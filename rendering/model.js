@@ -1,10 +1,18 @@
-function Model(v, c, color){
-    this.x = 0;
-    this.y = 0;
-    this.z = 0;
+function Model(v, c, x=0, y=0, z=0, rx=0, ry=0, rz=0){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.rx = rx;
+    this.ry = ry;
+    this.rz = rz;
     this.vertecies = v;
     this.surfaces = c;
-    this.color = color;
+
+    this.paint = function(color){
+        for(var i = 0; i < this.surfaces.length; i++){
+            this.surfaces[i].color = color;
+        }
+    }
 
     this.scale = function(fx, fy, fz){
         for (var i = 0; i < this.vertecies.length; i++){

@@ -11,10 +11,10 @@ if (window.innerWidth >= window.innerHeight) {
     canvas.width = window.innerWidth;
 }
 
-var fps = 30;
+var fps = 60;
 var loop = setInterval(main, 1000/fps);
 var cam = new Camera(-10,-15,-10,315,45,0);
-var cube1 = Object.assign({}, Cube);;
+var cube1 = Object.assign({}, Cube);
 var cube2 = Object.assign({}, Cube);
 var py = Object.assign({}, Pyramid);
 var py2 = Object.assign({}, Pyramid);
@@ -26,11 +26,9 @@ py2.x = 1;
 cube2.x = 1;
 cube1.x = -1;
 py.x = -1;
-cube2.color = "#F00";
-py2.color = "#F00";
 
 
-setInterval(function(){defaultKeyLoop(cam)}, 40);
+setInterval(function(){defaultKeyLoop(cam)}, 1000/fps);
 
 function main(){
     ctx.fillStyle = "#fff";
