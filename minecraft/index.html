@@ -1,18 +1,38 @@
-<!doctype html>
-<html>
-	<head>
-		<title>Minecraft</title>
-		<style>
-			* {
-				margin:0;
-				padding:0;
-			}
-			#minecraft {
-				background:#333;
-			}
-		</style>
-	</head>
-	<body>
-		<object width="100%" height="100%" id="minecraft" data="https://classic.minecraft.net/"></object>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3d Rendering</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background: #333;
+			text-align: center;
+			overflow: hidden;
+		}
+
+	</style>
+</head>
+<body>
+<canvas id="game"></canvas>
+<script src="../rendering/lodash.js"></script>
+<script>
+	_u = _.noConflict();
+</script>
+<script src="../rendering/utility.js"></script>
+<script src="../rendering/math.js"></script>
+<script src="../rendering/model.js"></script>
+<script src="../rendering/camera.js"></script>
+<script src="../rendering/controls.js"></script>
+<script src="../rendering/models.js"></script>
+
+<script src="player.js"></script>
+<script src="index.js"></script>
+
+<script src="../rendering/draw.js"></script>
+</body>
 </html>

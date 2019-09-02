@@ -20,6 +20,12 @@ function mouseClicks(event){
         if (event.button == 0){
             cv.requestPointerLock();
         }
+    } else if(document.pointerLockElement == cv){
+        if (event.button == 0){
+            cam.click("left");
+        } else if (event.button(1)){
+            cam.click("right");
+        }
     }
 }
 
@@ -33,8 +39,8 @@ window.document.addEventListener('keyup', function(e) {
 
 //default controls for the camera
 function defaultKeyLoop(camera) {
-    var speed = 0.1;
-    var turnSpeed = 0.5;
+    var speed = camera.speed;
+    var turnSpeed = camera.turnSpeed;
     cam = camera;
 
     if (keyState[38]){
