@@ -7,6 +7,7 @@ function Model(v, c, x=0, y=0, z=0, rx=0, ry=0, rz=0){
     this.rz = rz;
     this.vertecies = v;
     this.surfaces = c;
+    this.sizeScale = 1;
 
     this.paint = function(color){
         for(var i = 0; i < this.surfaces.length; i++){
@@ -22,6 +23,7 @@ function Model(v, c, x=0, y=0, z=0, rx=0, ry=0, rz=0){
             this.vertecies[i].y *= fy;
             this.vertecies[i].z *= fz;
         }
+        this.sizeScale *= (fx + fy + fz)/3;
     }
 
     this.rotate = function(rot){

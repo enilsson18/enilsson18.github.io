@@ -13,12 +13,15 @@ if (window.innerWidth >= window.innerHeight) {
 
 var fps = 60;
 var loop = setInterval(main, 1000/fps);
-var player = new Player(0,0,-10);
+var player = new Player(0,0,0,0,180,0);
 var scene = [];
 
 var stone = new Color(130,130,130);
 var dirt = new Color(97,37,0);
 var grass = new Color(0,196,3);
+var scale = 0.5;
+
+Cube.scale(scale, scale, scale);
 
 function generateMap() {
     var length = 0;
@@ -36,15 +39,21 @@ function generateMap() {
                     scene[length].paint(stone);
                 }
 
-                scene[length].scale(0.5, 0.5, 0.5);
-                scene[length].x = j - 5;
-                scene[length].y = i + 3;
-                scene[length].z = g - 15;
+                scene[length].x = (j - 5)*scale*2;
+                scene[length].y = (i)*scale*2;
+                scene[length].z = (g - 5)*scale*2;
 
                 length += 1;
             }
         }
     }
+
+    scene.push(clone(Cube));
+    scene[scene.length-1].z = -5;
+    scene[scene.length-1].y = -1;
+    scene.push(clone(Cube));
+    scene[scene.length-1].z = -5;
+    scene[scene.length-1].y = -2;
 }
 
 generateMap();
