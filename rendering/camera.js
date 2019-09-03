@@ -7,7 +7,7 @@ function Camera(x = 0,y = 0,z = 0,rx = 0,ry = 0,rz = 0){
     this.rz = rz;
     //fov 1 = 45 degrees
     this.aspectRatio = 9/16;
-    this.fovX = 0.5;
+    this.fovX = 1;
     this.fovY = this.fovX * this.aspectRatio;
     this.dist = 1;
     this.speed = 0.1;
