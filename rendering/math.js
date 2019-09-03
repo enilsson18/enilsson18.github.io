@@ -24,7 +24,7 @@ function get2dCoords(camera, vertex){
     var o = new Vec((camera.rx)*(Math.PI/180), (camera.ry)*(Math.PI/180), (camera.rz)*(Math.PI/180));
     var d = new Vec(0,0,0);
     //if warping change the first 2 to match screen res width should be 0.5 always in x value
-    var e = new Vec(0.5*camera.fov,0.281*camera.fov,camera.fov);
+    var e = new Vec(camera.fovX,camera.fovY,camera.dist);
 
     //projection equations
     d.x = Math.cos(o.y)*(Math.sin(o.z)*a.y + Math.cos(o.z)*a.x) - Math.sin(o.y)*a.z;
@@ -38,8 +38,46 @@ function get2dCoords(camera, vertex){
 
     //complex rotation version
     //adjusts the picture so it looks nice and centered along with adaptation for screen
-    x = (d.x*canvas.width)/((dist - e.z)*e.x)*e.z + canvas.width/2;
-    y = (d.y*canvas.height)/((dist - e.z)*e.y)*e.z + canvas.height/2;
+    x = (d.x)/((dist - e.z)*e.x)*e.z;
+    y = (d.y)/((dist - e.z)*e.y)*e.z;
+
+    /* fisheye undistorter
+    var s = 1.5;
+    var rad = Math.sqrt(Math.pow(camera.fovX,2) + Math.pow(camera.fovY,2))/s;
+    var distance = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
+    var r = distance/rad;
+
+    var theta;
+    if (r == 0){
+        theta = 1;
+    } else {
+        theta = Math.atan(r)/r;
+    }
+    x *= theta;
+    y *= theta;
+     */
+
+    /*
+    var a = 16/9;
+    var c = 1;
+    var s = 1.5;
+    var h = Math.tan(camera.fovY/2);
+    var z =1/2+1/2*Math.sqrt(1+Math.pow(h,2)*Math.pow(s,2)*(1+Math.pow(a,2)));
+    var ny = (z-1)/(1+Math.pow(a,2)*Math.pow(c,2));
+    var nx = Math.pow(a,2)*Math.pow(c,2)*ny;
+    var temp = x;
+
+    //barrel distortion
+    //x = x/(z-nx*Math.pow(x,2)-ny*Math.pow(y,2));
+    //y = y/(z-nx*Math.pow(temp,2)-ny*Math.pow(y,2));
+
+    //pinch distortion
+    //x = z*x/(1/2 + Math.sqrt(1/4 + z*(nx*Math.pow(x,2) + ny*Math.pow(y,2))));
+    //y = z*y/(1/2 + Math.sqrt(1/4 + z*(nx*Math.pow(temp,2) + ny*Math.pow(y,2))));
+    */
+
+    x = x*canvas.width + canvas.width/2;
+    y = y*canvas.height + canvas.height/2;
 
     //console.log(x + " " + y);
 
