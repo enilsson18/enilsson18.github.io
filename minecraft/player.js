@@ -89,7 +89,7 @@ function Player(x=0, y=0, z=0, rx=0, ry=0, rz=0){
             this.rz = natRot(this.rz+amount);
         }
         if (this.rx < 270 && this.rx > 90){
-            if (old > 270){
+            if (old < 270 && old > 0){
                 this.rx = 270;
             } else if (old < 90){
                 this.rx = 90;

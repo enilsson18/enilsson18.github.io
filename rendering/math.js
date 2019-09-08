@@ -82,11 +82,20 @@ function get2dCoords(camera, vertex){
     //console.log(x + " " + y);
 
     //this eliminates a glitch where point renders 180 degrees behind person (duplicate glitch)
+    /*
     var nx = camera.x + Math.sin(camera.ry*(Math.PI/180))*dist;
     var ny = camera.y + Math.cos(camera.rx*(Math.PI/180))*dist;
     var nz = camera.z + Math.cos(camera.ry*(Math.PI/180))*dist;
 
     if (getDist(nx,ny,nz,vertex.x,vertex.y,vertex.z) > dist*2){
+        return null;
+    }
+     */
+    var p = a;
+    p = rotate(p,new Vec(-camera.rx*(Math.PI/180), -camera.ry*(Math.PI/180), -camera.rz*(Math.PI/180)));
+    p.z -= e.z;
+
+    if (p.z <= 0){
         return null;
     }
 
