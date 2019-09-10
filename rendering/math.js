@@ -41,7 +41,8 @@ function get2dCoords(camera, vertex){
     x = (d.x)/((dist - e.z)*e.x)*e.z;
     y = (d.y)/((dist - e.z)*e.y)*e.z;
 
-    /* fisheye undistorter
+    /*
+    fisheye undistorter
     var s = 1.5;
     var rad = Math.sqrt(Math.pow(camera.fovX,2) + Math.pow(camera.fovY,2))/s;
     var distance = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
@@ -58,18 +59,18 @@ function get2dCoords(camera, vertex){
      */
 
     /*
-    var a = 16/9;
+    var persp = 16/9;
     var c = 1;
     var s = 1.5;
     var h = Math.tan(camera.fovY/2);
-    var z =1/2+1/2*Math.sqrt(1+Math.pow(h,2)*Math.pow(s,2)*(1+Math.pow(a,2)));
-    var ny = (z-1)/(1+Math.pow(a,2)*Math.pow(c,2));
-    var nx = Math.pow(a,2)*Math.pow(c,2)*ny;
+    var z =1/2+1/2*Math.sqrt(1+Math.pow(h,2)*Math.pow(s,2)*(1+Math.pow(persp,2)));
+    var ny = (z-1)/(1+Math.pow(persp,2)*Math.pow(c,2));
+    var nx = Math.pow(persp,2)*Math.pow(c,2)*ny;
     var temp = x;
 
     //barrel distortion
-    //x = x/(z-nx*Math.pow(x,2)-ny*Math.pow(y,2));
-    //y = y/(z-nx*Math.pow(temp,2)-ny*Math.pow(y,2));
+    x = x/(z-nx*Math.pow(x,2)-ny*Math.pow(y,2));
+    y = y/(z-nx*Math.pow(temp,2)-ny*Math.pow(y,2));
 
     //pinch distortion
     //x = z*x/(1/2 + Math.sqrt(1/4 + z*(nx*Math.pow(x,2) + ny*Math.pow(y,2))));
@@ -91,15 +92,12 @@ function get2dCoords(camera, vertex){
         return null;
     }
      */
-    var p = a;
-    p = rotate(p,new Vec(-camera.rx*(Math.PI/180), -camera.ry*(Math.PI/180), -camera.rz*(Math.PI/180)));
-    p.z -= e.z;
 
-    if (p.z <= 0){
+    if (d.z > 0) {
+        return new Point(x, y, dist);
+    } else {
         return null;
     }
-
-    return new Point(x,y,dist);
 }
 
 //math behind spining a 3d point about the origin
