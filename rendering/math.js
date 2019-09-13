@@ -24,7 +24,7 @@ function get2dCoords(camera, vertex){
     var o = new Vec((camera.rx)*(Math.PI/180), (camera.ry)*(Math.PI/180), (camera.rz)*(Math.PI/180));
     var d = new Vec(0,0,0);
     //if warping change the first 2 to match screen res width should be 0.5 always in x value
-    var e = new Vec(camera.fovX,camera.fovY,camera.dist);
+    var e = new Vec(camera.fovX/camera.sizeDownScale,camera.fovY/camera.sizeDownScale,camera.dist/camera.sizeDownScale);
 
     //projection equations
     d.x = Math.cos(o.y)*(Math.sin(o.z)*a.y + Math.cos(o.z)*a.x) - Math.sin(o.y)*a.z;

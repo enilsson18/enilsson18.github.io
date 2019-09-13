@@ -11,7 +11,7 @@ function Player(x=0, y=0, z=0, rx=0, ry=0, rz=0){
     this.ry = ry;
     this.rz = rz;
     this.camOffsetX = 0;
-    this.camOffsetY = -2.5;
+    this.camOffsetY = -2;
     this.camOffsetZ = 0;
     this.gravity = 0.02;
     this.jumpPower = 0.3;

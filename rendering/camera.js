@@ -12,6 +12,7 @@ function Camera(x = 0,y = 0,z = 0,rx = 0,ry = 0,rz = 0){
     this.dist = 1;
     this.speed = 0.1;
     this.turnSpeed = 0.5;
+    this.sizeDownScale = 1000;
 
     this.setProperties = function(nx, ny, nz, nrx, nry, nrz, nfov){
         this.x = nx;
