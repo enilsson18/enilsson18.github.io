@@ -2,6 +2,7 @@ var stone = new Color(130,130,130);
 var dirt = new Color(97,37,0);
 var grass = new Color(0,196,3);
 var leaves = new Color(12, 107, 0);
+var grassTexture = new Texture("assets/Grass_Block.png");
 
 var blocks = [];
 
@@ -70,6 +71,22 @@ function getBlockModels(){
     return list;
 }
 
+function Texture(address, view){
+    this.img = new Image();
+    this.img.src = address;
+    this.view = view;
+
+    this.draw = function(x1,y1,x2,y2){
+        if (this.view == "top"){
+            ctx.drawImage(this.img,16,16,16,16,x1,y1,x2-x1,y2-y1);
+        } else if (this.view == "bottom"){
+            ctx.drawImage(this.img,0,0,16,16,x1,y1,x2-x1,y2-y1);
+        } else if (this.view == "side"){
+            ctx.drawImage(this.img,0,16,16,16,x1,y1,x2-x1,y2-y1);
+        }
+    }
+}
+
 function Block(type,x,y,z){
     this.type = type;
     this.model = clone(Cube);
@@ -80,6 +97,7 @@ function Block(type,x,y,z){
 
     if (type == "grass"){
         this.model.paint(grass);
+        //this.model.surfaces[0].color = new Color(0,0,0,0,);
     }
     else if (type == "log"){
         this.model.paint(dirt);

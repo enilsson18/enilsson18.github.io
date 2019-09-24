@@ -63,19 +63,23 @@ function renderScene(camera, shapes) {
         var ps = renderedSurfaces[i][0].points;
 
         if (!ps.includes(null)) {
-            ctx.strokeStyle = "#000";
-            //ctx.strokeStyle = renderedSurfaces[i][1].getColor();
-            ctx.fillStyle = renderedSurfaces[i][1].getColor();
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(ps[0].x, ps[0].y);
-            for (var j = 1; j < ps.length; j++){
-                ctx.lineTo(ps[j].x, ps[j].y);
+            if (renderedSurfaces[i][1].texture != undefined){
+
+            } else {
+                ctx.strokeStyle = "#000";
+                //ctx.strokeStyle = renderedSurfaces[i][1].getColor();
+                ctx.fillStyle = renderedSurfaces[i][1].getColor();
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(ps[0].x, ps[0].y);
+                for (var j = 1; j < ps.length; j++) {
+                    ctx.lineTo(ps[j].x, ps[j].y);
+                }
+                ctx.lineTo(ps[0].x, ps[0].y);
+                ctx.closePath();
+                ctx.stroke();
+                ctx.fill();
             }
-            ctx.lineTo(ps[0].x,ps[0].y);
-            ctx.closePath();
-            ctx.stroke();
-            ctx.fill();
         }
     }
 }

@@ -26,14 +26,14 @@ c.push([2,6]);
 c.push([3,7]);
 */
 
-
+//top
+c.push(new Surface([0,1,5,4],defColor));
+//bottom
+c.push(new Surface([3,0,4,7],defColor));
+//sides
 c.push(new Surface([0,1,2,3],defColor));
 
 c.push(new Surface([4,5,6,7],defColor));
-
-c.push(new Surface([0,1,5,4],defColor));
-
-c.push(new Surface([3,0,4,7],defColor));
 
 c.push(new Surface([3,7,6,2],defColor));
 

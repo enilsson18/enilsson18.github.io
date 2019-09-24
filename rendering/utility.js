@@ -10,11 +10,13 @@ function Vec(x,y,z){
     this.z = z;
 }
 
-function Color(r,g,b, a = 1){
+function Color(r = 0,g = 0,b = 0, a = 1, t = undefined){
     this.r = r;
     this.g = g;
     this.b = b;
     this.a = a;
+
+    this.texture = t;
 
     this.getColor = function(){
         return "rgba(" + this.r + "," + this.g + "," + this.b + "," + this.a + ")";
