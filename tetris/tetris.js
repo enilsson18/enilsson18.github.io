@@ -1,4 +1,4 @@
-let WIDTH = 0, HEIGHT = 0, time = 0, timer = 5, nextPiece = 0, pieceType = 0, size = 0,
+let WIDTH = 0, HEIGHT = 0, time = 0, timer = 5, nextPiece = 0, size = 0, das = 0, score = 0;
 piece = [], board = [];
 
 function setup()
@@ -8,6 +8,7 @@ function setup()
 	HEIGHT = size*24;
 	createCanvas(WIDTH+size*5, HEIGHT);
     strokeWeight(.5);
+    score = 0;
 	newPiece();
 }
 
@@ -15,12 +16,13 @@ function reset()
 {
 	board = [];
 	piece = [];
+	score = 0;
 }
 
 function draw()
 {
     if (time % 2.5 == 0){
-        keys(); 
+        keys();
     }
 	if (time >= timer)
 	{
@@ -71,6 +73,10 @@ function drawSideBar()
         rect(nextPiece[i].x+size*7, size*2 + nextPiece[i].y + size, size, size);
       }
     }
+    fill("#000");
+    textSize(50);
+    text("Score",WIDTH*1.14,HEIGHT*0.3);
+	text(score,WIDTH*1.1,HEIGHT*0.35);
 }
 
 function drawBoard()
@@ -107,22 +113,23 @@ function collisionCheck(posX, posY)
 
 function newPiece()
 {
-	let startX = WIDTH/2, startY = 0, co = color(random(0,255),random(0,255),random(0,255));
+	let startX = WIDTH/2, startY = 0;
 	piece = [];
 	//pieceType = 1;
     if (nextPiece == 0)
     {
-        nextPiece = pieceSetter(Math.floor(random(0,7)), startX, startY, co);
+        nextPiece = pieceSetter(Math.floor(random(0,7)), startX, startY);
     }
     piece = nextPiece;
-    nextPiece = pieceSetter(Math.floor(random(0,7)), startX, startY, co);
+    nextPiece = pieceSetter(Math.floor(random(0,7)), startX, startY);
 }
 
-function pieceSetter(p, startX, startY, co){
+function pieceSetter(p, startX, startY){
   let pT = [];
   //I
 	if (p == 0)
 	{
+		var co = color(255, 255, 0);
 		pT.push({x:startX,y:startY,c:co,type:0});
 		pT.push({x:startX-(size*2),y:startY,c:co});
 		pT.push({x:startX-size,y:startY,c:co});
@@ -131,6 +138,7 @@ function pieceSetter(p, startX, startY, co){
 	//BOX
 	if (p == 1)
 	{
+		var co = color(0, 204, 255);
 		pT.push({x:startX,y:startY,c:co,type:1});
 		pT.push({x:startX-size,y:startY,c:co});
 		pT.push({x:startX-size,y:startY-size,c:co});
@@ -139,6 +147,7 @@ function pieceSetter(p, startX, startY, co){
 	//T
 	if (p == 2)
 	{
+		var co = color(204, 0, 255);
 		pT.push({x:startX,y:startY,c:co,type:2});
 		pT.push({x:startX+size,y:startY,c:co});
 		pT.push({x:startX-size,y:startY,c:co});
@@ -147,6 +156,7 @@ function pieceSetter(p, startX, startY, co){
 	//L
 	if (p == 3)
 	{
+		var co = color(255, 102, 0);
 		pT.push({x:startX,y:startY,c:co,type:3});
 		pT.push({x:startX+size,y:startY,c:co});
 		pT.push({x:startX-size,y:startY,c:co});
@@ -155,6 +165,7 @@ function pieceSetter(p, startX, startY, co){
 	//J
 	if (p == 4)
 	{
+		var co = color(0, 0, 204);
 		pT.push({x:startX,y:startY,c:co,type:4});
 		pT.push({x:startX+size,y:startY,c:co});
 		pT.push({x:startX-size,y:startY,c:co});
@@ -163,6 +174,7 @@ function pieceSetter(p, startX, startY, co){
 	//Z
 	if (p == 5)
 	{
+		var co = color(204, 0, 0);
 		pT.push({x:startX,y:startY,c:co,type:5});
 		pT.push({x:startX+size,y:startY,c:co});
 		pT.push({x:startX-size,y:startY-size,c:co});
@@ -171,6 +183,7 @@ function pieceSetter(p, startX, startY, co){
 	//S
 	if (p == 6)
 	{
+		var co = color(0, 204, 0)
 		pT.push({x:startX,y:startY,c:co,type:6});
 		pT.push({x:startX+size,y:startY-size,c:co});
 		pT.push({x:startX-size,y:startY,c:co});
@@ -233,7 +246,7 @@ function Rotate(dir)
 
 function game()
 {
-  let lines = [], newBoard = [];
+  let lines = [], newBoard = [], scoreMulti = 1;
   for (var i = 0; i < 24*10; i++)
   {
     newBoard.push(0);
@@ -272,50 +285,48 @@ function game()
 			board[i].y += size;
 		}
 	}
+    scoreMulti *= 5;
   }
+  score += scoreMulti;
 }
 
 function keys()
 {
 	let move = true;
 	timer = 5;
-	if (keyIsDown(DOWN_ARROW))
-	{
-		timer = 1;
+	if (keyIsDown(DOWN_ARROW) || keyIsDown(UP_ARROW) || keyIsDown(LEFT_ARROW) || keyIsDown(RIGHT_ARROW)){
+		das += 1;
+	} else {
+		das = 0;
 	}
-	if (keyIsDown(RIGHT_ARROW))
-	{
-		for (let i = 0; i < piece.length; i++)
-		{
-			if(collisionCheck(piece[i].x+size,piece[i].y))
-			{
-				move = false;
-				break;
+	if (das == 1 || das >= 5) {
+		if (keyIsDown(DOWN_ARROW)) {
+			timer = 1;
+		}
+		if (keyIsDown(RIGHT_ARROW)) {
+			for (let i = 0; i < piece.length; i++) {
+				if (collisionCheck(piece[i].x + size, piece[i].y)) {
+					move = false;
+					break;
+				}
+			}
+			if (move) {
+				for (let i = 0; i < piece.length; i++) {
+					piece[i].x += size;
+				}
 			}
 		}
-		if (move)
-		{
-			for (let i = 0; i < piece.length; i++)
-			{
-				piece[i].x += size;
+		if (keyIsDown(LEFT_ARROW)) {
+			for (let i = 0; i < piece.length; i++) {
+				if (collisionCheck(piece[i].x - size, piece[i].y)) {
+					move = false;
+					break;
+				}
 			}
-		}
-	}
-	if (keyIsDown(LEFT_ARROW))
-	{
-		for (let i = 0; i < piece.length; i++)
-		{
-			if(collisionCheck(piece[i].x-size,piece[i].y))
-			{
-				move = false;
-				break;
-			}
-		}
-		if (move)
-		{
-			for (let i = 0; i < piece.length; i++)
-			{
-				piece[i].x -= size;
+			if (move) {
+				for (let i = 0; i < piece.length; i++) {
+					piece[i].x -= size;
+				}
 			}
 		}
 	}
