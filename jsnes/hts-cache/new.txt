@@ -1,0 +1,6 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+17:34:38	304/304	---M-Z	200	added ('OK')	text/html	etag:%223dc3635032845cf22db9b8bd9222bc54-ssl-df%22	https://jsnes.org/robots.txt		(from )
+17:34:39	434/434	---M-Z	200	added ('OK')	text/html	etag:%223dc3635032845cf22db9b8bd9222bc54-ssl-df%22	https://jsnes.org/	C:/Users/Erik/Desktop/Stuff/Website%20Downloader/jsnes/jsnes.org/index.html	(from )
+17:34:39	434/434	---M-Z	200	added ('OK')	text/html	etag:%223dc3635032845cf22db9b8bd9222bc54-ssl-df%22	https://jsnes.org/favicon.ico	C:/Users/Erik/Desktop/Stuff/Website%20Downloader/jsnes/jsnes.org/favicon.html	(from https://jsnes.org/)
+17:34:39	138105/138105	---M-Z	200	added ('OK')	text/css	etag:%22e5bb11780a869785093bc1591b2945ef-ssl-df%22	https://jsnes.org/static/css/main.1a641415.css	C:/Users/Erik/Desktop/Stuff/Website%20Downloader/jsnes/jsnes.org/static/css/main.1a641415.css	(from https://jsnes.org/)
+17:34:39	455505/455505	---M-Z	200	added ('OK')	application/javascript	etag:%2266ea843e164880cdb9eb7bebf60eb74b-ssl-df%22	https://jsnes.org/static/js/main.4b317347.js	C:/Users/Erik/Desktop/Stuff/Website%20Downloader/jsnes/jsnes.org/static/js/main.4b317347.js	(from https://jsnes.org/)
