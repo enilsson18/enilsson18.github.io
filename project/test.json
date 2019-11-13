@@ -1,0 +1,9 @@
+{
+  "name": "Test",
+  "date": "1/1/2019",
+  "author": "Erik Nilsson",
+  "img": "http://chimpsterman.me/pics/waterbg.png",
+  "description": "I am a highschooler in Ohio and I am constantly learning more and more through various coding projects.\n        Like most people I started with Scratch making small projects with my friends when I was around 10.\n        When I was 11, I went to a coding camp where I got an introduction to c++ and learned most major programming\n        functions. I fiddled with it for a few years and then began learning web development with html, css, and js.\n        My sophmore year in Highschool I took my first real AP Java class and began modding for minecraft along with making\n        some machine learning projects using neural networks. Over that winter I expanded to node js and started learning\n        more server side methods in programming. This is where most of the Web Accessible Projects came from around this time.\n        After having taken all the available courses in my school for coding I took a C/C++ class through CCP at Tri-C.",
+  "link": "http://chimpsterman.me",
+  "linkCode": "http://chimpsterman.me"
+}

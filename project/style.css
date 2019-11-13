@@ -1,0 +1,96 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#background {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    left:0px;
+    top:0px;
+}
+
+#project {
+    margin: 30px;
+    margin-top: 70px;
+    margin-bottom: 5px;
+    font-size: 75px;
+}
+
+.header {
+    margin: 30px;
+}
+
+#date {
+    margin: 10px;
+}
+
+#main {
+    color: white;
+
+    text-align: center;
+}
+
+#back {
+    background-color: #000;
+    position: absolute;
+    padding: 10px;
+    left: 10px;
+    top: 10px;
+    font-size:30px;
+    transition: background 0.5s ease;
+}
+
+#back:hover {
+    background-color: blue;
+    cursor: default;
+}
+
+#back a {
+    color: white;
+    text-decoration: none;
+}
+
+#img {
+    width: 80%;
+    height: 45%
+}
+
+#description {
+    margin: auto;
+    padding: 10px;
+    color: white;
+    width: 50%;
+}
+
+hr.major {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.link {
+    background-color: #000;
+    width: 250px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.5s ease;
+}
+
+.link:hover {
+    background-color: blue;
+    cursor: default;
+}
+
+.link a {
+    color: white;
+    text-decoration: none;
+}
