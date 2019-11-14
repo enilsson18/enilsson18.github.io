@@ -30,8 +30,15 @@ function updatePage(){
     document.getElementById('author').innerText = "By: " + file.author;
     document.getElementById('date').innerText = file.date;
     document.getElementById('img').src = file.img;
+    document.getElementById('video').src = file.vid;
+    if(file.vid == ""){
+        document.getElementById('vidbox').style.display = "none";
+    }
     document.getElementById('description').innerText = file.description;
     document.getElementById('link').href = file.link;
+    if (file.link == "") {
+        document.getElementById('link').innerText = "Not Viewable in Browser";
+    }
     document.getElementById('linkcode').href = file.linkCode;
 }
 

@@ -1,0 +1,10 @@
+{
+  "name": "Rendering Engine",
+  "date": "9/21/19",
+  "author": "Erik Nilsson",
+  "img": "http://chimpsterman.me/pics/rendering.png",
+  "vid": "",
+  "description": "A JS simple rendering engine for polygons. The cursor locks in the window when clicked to make a first person view with mouse input. Standard wasd with space to go up and shift to go down. I have programmed in a few presets in models.js. The camera uses a perspective camera angle algorithem but has a minor weird fish eye warping effect on multiple models. This was an attempt to make a rendering library so the process was simplified as much as it could be. Refrence the original main rendering file but basically all you do is load premade shapes and alter their properties to how you want them to be moved around. Then just plop them in an array and send them into the main render method. This was my first attempt at full ground up rendering and is one of the most impressive projects I have made so far. For some further detail on how it works please continue reading. So the models are sent into the renderer and then first plugged into the perspective camera algorithem to find the translation of each 3d point onto the 2d plane that is the computer screen. Secondly, they are broken up into their individual surfaces and go through an algorithem to decide which of them should be rendered infront of the other surfaces based on the camera position. Then it draws these reorderd surfaces onto a js canvas.",
+  "link": "http://chimpsterman.me/rendering",
+  "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/rendering"
+}

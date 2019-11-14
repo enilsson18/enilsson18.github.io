@@ -1,0 +1,10 @@
+{
+  "name": "Snake",
+  "date": "9/25/18",
+  "author": "Erik Nilsson",
+  "img": "http://chimpsterman.me/pics/snake.png",
+  "vid": "",
+  "description": "The first js canvas html game project I ever made. I like to make snake in a new language to understand it for the first time. Just use wasd for controls instructions are on the side of the screen.",
+  "link": "http://chimpsterman.me/snake",
+  "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/snake"
+}
