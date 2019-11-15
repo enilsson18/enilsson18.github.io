@@ -30,6 +30,9 @@ function updatePage(){
     document.getElementById('author').innerText = "By: " + file.author;
     document.getElementById('date').innerText = file.date;
     document.getElementById('img').src = file.img;
+    if (file.img == ""){
+        document.getElementById('img').src = "http://chimpsterman.me/pics/logo.png"
+    }
     document.getElementById('video').src = file.vid;
     if(file.vid == ""){
         document.getElementById('vidbox').style.display = "none";
