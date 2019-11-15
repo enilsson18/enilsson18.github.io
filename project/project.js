@@ -31,7 +31,7 @@ function updatePage(){
     document.getElementById('date').innerText = file.date;
     document.getElementById('img').src = file.img;
     if (file.img == ""){
-        document.getElementById('img').src = "http://chimpsterman.me/pics/logo.png"
+        document.getElementById('img').src = "http://chimpsterman.me/pics/noimagefound.png"
     }
     document.getElementById('video').src = file.vid;
     if(file.vid == ""){
