@@ -1,5 +1,6 @@
 var request = new XMLHttpRequest();
 var projectCount = 0;
+var carouselCount = 0;
 var projectList;
 
 function init(){
@@ -59,7 +60,7 @@ function processFile(file){
             }
             //carousel list
             element1.setAttribute("data-target", "#featurebar");
-            element1.setAttribute("data-slide-to", projectCount);
+            element1.setAttribute("data-slide-to", carouselCount);
             document.getElementById("carousel-list").appendChild(element1);
 
             //carousel content
@@ -70,6 +71,8 @@ function processFile(file){
             } else {
                 element22.setAttribute("src", "" + file.img + "");
             }
+
+            carouselCount += 1;
         }
 
         element21.appendChild(element22);
