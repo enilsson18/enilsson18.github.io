@@ -8,13 +8,19 @@ function init(){
 }
 
 function loadProjects(list){
-    for (var i = 0; i < list.length; i++){
-        requestFile("project/" + list[i] + "");
-    }
+    var count = 0;
+    var loop = setInterval(function(){
+        if (count > list.length){
+            clearInterval(loop);
+        }
+
+        requestFile("/project/" + list[count] + "");
+        count += 1;
+    },50);
 }
 
 function requestFile(p){
-    var path = p + ".json";
+    var path = p;
     request.open('GET', path);
     request.responseType = 'json';
     request.send();
@@ -22,6 +28,7 @@ function requestFile(p){
 
 request.onload = function(){
     var file = request.response;
+    console.log(file);
     processFile(file);
 };
 
