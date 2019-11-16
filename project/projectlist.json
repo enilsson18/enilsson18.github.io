@@ -10,6 +10,8 @@
     "snake.json",
     "soccer.json",
     "tetris.json",
-    "ttt.json"
+    "ttt.json",
+    "unityfps.json",
+    "gamearcade.json"
   ]
 }

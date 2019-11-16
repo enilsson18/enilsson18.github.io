@@ -32,6 +32,8 @@ function updatePage(){
     document.getElementById('img').src = file.img;
     if (file.img == ""){
         document.getElementById('img').src = "http://chimpsterman.me/pics/noimagefound.png"
+    } else if (file.img == "none"){
+        document.getElementById('img').remove();
     }
     document.getElementById('video').src = file.vid;
     if(file.vid == ""){
