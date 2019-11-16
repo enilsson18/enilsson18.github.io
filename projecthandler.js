@@ -47,7 +47,7 @@ function processFile(file){
         //
         var element3 = document.createElement("li");
         var element31 = document.createElement("a");
-        var element32 = document.createElement("h2");
+        var element32 = document.createElement("h3");
         var element33 = document.createElement("img");
 
         if (projectCount == 0){
