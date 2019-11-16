@@ -1,5 +1,6 @@
 var request = new XMLHttpRequest();
 var projectCount = 0;
+var projectList;
 
 function init(){
 
@@ -8,18 +9,11 @@ function init(){
 }
 
 function loadProjects(list){
-    var count = 0;
-    var loop = setInterval(function(){
-        if (count > list.length){
-            clearInterval(loop);
-        }
-
-        requestFile("/project/" + list[count] + "");
-        count += 1;
-    },50);
+    projectList = list;
+    requestFile("/project/" + list[projectCount] + "");
 }
 
-function requestFile(p){
+function requestFile(p, a = false){
     var path = p;
     request.open('GET', path);
     request.responseType = 'json';
@@ -30,6 +24,13 @@ request.onload = function(){
     var file = request.response;
     console.log(file);
     processFile(file);
+    if (projectCount > 0 && projectCount < projectList.length){
+        requestFile("/project/" + projectList[projectCount] + "");
+    }
+    if (projectCount == projectList.length){
+        document.getElementById("firstc").remove();
+        projectCount += 1;
+    }
 };
 
 function processFile(file){
@@ -51,7 +52,9 @@ function processFile(file){
 
         if (projectCount == 0){
             element1.setAttribute("class", "active");
-            element2.setAttribute("class", "active");
+            element2.setAttribute("class", "carousel-item active");
+        } else {
+            element2.setAttribute("class", "carousel-item");
         }
         //carousel list
         element1.setAttribute("data-target", "#featurebar");
@@ -59,7 +62,6 @@ function processFile(file){
         document.getElementById("carousel-list").appendChild(element1);
 
         //carousel content
-        element2.setAttribute("class", "carousel-item");
         element21.setAttribute("href", "/project/project.html?p=" + file.filename + "");
         element22.setAttribute("class", "d-block w-100");
         element22.setAttribute("src", "" + file.img + "");
