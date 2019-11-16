@@ -50,24 +50,26 @@ function processFile(file){
         var element32 = document.createElement("h3");
         var element33 = document.createElement("img");
 
-        if (projectCount == 0){
-            element1.setAttribute("class", "active");
-            element2.setAttribute("class", "carousel-item active");
-        } else {
-            element2.setAttribute("class", "carousel-item");
-        }
-        //carousel list
-        element1.setAttribute("data-target", "#featurebar");
-        element1.setAttribute("data-slide-to", projectCount);
-        document.getElementById("carousel-list").appendChild(element1);
+        if (file.img != "") {
+            if (projectCount == 0) {
+                element1.setAttribute("class", "active");
+                element2.setAttribute("class", "carousel-item active");
+            } else {
+                element2.setAttribute("class", "carousel-item");
+            }
+            //carousel list
+            element1.setAttribute("data-target", "#featurebar");
+            element1.setAttribute("data-slide-to", projectCount);
+            document.getElementById("carousel-list").appendChild(element1);
 
-        //carousel content
-        element21.setAttribute("href", "/project/project.html?p=" + file.filename + "");
-        element22.setAttribute("class", "d-block w-100");
-        if (file.img == ""){
-            element22.setAttribute("src", "http://chimpsterman.me/pics/noimagefound.png");
-        } else {
-            element22.setAttribute("src", ""+file.img+"");
+            //carousel content
+            element21.setAttribute("href", "/project/project.html?p=" + file.filename + "");
+            element22.setAttribute("class", "d-block w-100");
+            if (file.img == "") {
+                element22.setAttribute("src", "http://chimpsterman.me/pics/noimagefound.png");
+            } else {
+                element22.setAttribute("src", "" + file.img + "");
+            }
         }
 
         element21.appendChild(element22);
