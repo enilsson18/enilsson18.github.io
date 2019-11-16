@@ -1,0 +1,15 @@
+{
+  "name": "projectlist",
+  "projects": [
+    "chat.json",
+    "minecraft.json",
+    "renderer.json",
+    "platformer.json",
+    "pong.json",
+    "raycasting.json",
+    "snake.json",
+    "soccer.json",
+    "tetris.json",
+    "ttt.json"
+  ]
+}
