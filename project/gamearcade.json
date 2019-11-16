@@ -3,7 +3,7 @@
   "filename": "gamearcade",
   "date": "10/25/16",
   "author": "Erik Nilsson",
-  "img": "none",
+  "img": "",
   "vid": "https://www.youtube.com/embed/UKdc8oXH59s",
   "description": "A compilation of all my early 2d c++ projects in console. most either use was or arrow key controls. The git files have a .exe to run on windows.",
   "link": "",
