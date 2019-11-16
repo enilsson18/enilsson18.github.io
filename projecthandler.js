@@ -64,7 +64,12 @@ function processFile(file){
         //carousel content
         element21.setAttribute("href", "/project/project.html?p=" + file.filename + "");
         element22.setAttribute("class", "d-block w-100");
-        element22.setAttribute("src", "" + file.img + "");
+        if (file.img == ""){
+            element22.setAttribute("src", "http://chimpsterman.me/pics/noimagefound.png");
+        } else {
+            element22.setAttribute("src", ""+file.img+"");
+        }
+
         element21.appendChild(element22);
         element2.appendChild(element21);
         document.getElementById("carousel-content").appendChild(element2);
@@ -73,7 +78,10 @@ function processFile(file){
         element31.setAttribute("href", "/project/project.html?p=" + file.filename + "");
         element32.innerText = file.name;
         element33.setAttribute("class", "d-block w-100");
-        element33.setAttribute("src", "" + file.img + "");
+        element33.setAttribute("src", ""+file.img+"");
+        if (file.img == ""){
+            element33.setAttribute("src", "http://chimpsterman.me/pics/noimagefound.png");
+        }
         element31.appendChild(element32);
         element31.appendChild(element33);
         element3.appendChild(element31);
