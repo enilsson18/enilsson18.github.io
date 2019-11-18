@@ -1,0 +1,11 @@
+{
+  "name": "AI Java Snake",
+  "filename": "javasnakeai",
+  "date": "7/18/28",
+  "author": "Erik Nilsson",
+  "img": "",
+  "vid": "",
+  "description": "A working machine learning snake ai program. It uses a basic neural network. uses console to set parameters. It was made in eclipse.",
+  "link": "",
+  "linkCode": "https://github.com/ChimpsterMan/SnakeAI"
+}

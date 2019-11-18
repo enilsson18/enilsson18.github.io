@@ -1,0 +1,11 @@
+{
+  "name": "AI Line",
+  "filename": "machinelearningline",
+  "date": "7/21/18",
+  "author": "Erik Nilsson",
+  "img": "",
+  "vid": "",
+  "description": "A machine learning line program that finds the line of best fit using gradient descent. Runs in eclipse with processing.",
+  "link": "",
+  "linkCode": "https://github.com/ChimpsterMan/MachineLearningLine"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Java Cat",
+  "filename": "catproject",
+  "date": "2/16/17",
+  "author": "Erik Nilsson",
+  "img": "",
+  "vid": "",
+  "description": "A game where you are a cat jumpin around onto counters and stuff. You even can dodge arrows. It was made in java processing with gifs. In order to open you need the processing module.",
+  "link": "",
+  "linkCode": "https://github.com/ChimpsterMan/CatProject"
+}

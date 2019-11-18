@@ -1,0 +1,11 @@
+{
+  "name": "SFML Maze Gen",
+  "filename": "sfmlmaze",
+  "date": "10/30/19",
+  "author": "Erik Nilsson",
+  "img": "",
+  "vid": "",
+  "description": "A C++ maze generator using recursion. Run in debuggin mode in vstudios 2017 or compatible. Debuggin mode is needed for proper live maze generation. The process is scalable to anysize as long as you are willing to wait that long and your screen is big enough :). You can load and save mazes that you like so you don;t have to remake a maze every time.",
+  "link": "",
+  "linkCode": "https://github.com/ChimpsterMan/SFMLMaze"
+}

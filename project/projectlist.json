@@ -12,6 +12,13 @@
     "tetris.json",
     "ttt.json",
     "unityfps.json",
-    "gamearcade.json"
+    "gamearcade.json",
+    "thefinalstory.json",
+    "catproject.json",
+    "machinelearningline.json",
+    "sfmlmaze.json",
+    "javasnake.json",
+    "javasnakeai.json",
+    "neatsnake.json"
   ]
 }

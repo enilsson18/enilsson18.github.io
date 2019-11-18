@@ -1,0 +1,11 @@
+{
+  "name": "First C++ Game",
+  "filename": "thefinalstory",
+  "date": "7/8/16",
+  "author": "Erik Nilsson",
+  "img": "",
+  "vid": "",
+  "description": "The project was made at a coding camp during the summer of 2016. It is the first project I ever made in c++. The project was made in vs studios and has a runable .exe in the src files linked. It is a text adventure program where you are a night and need to slay a dragon.",
+  "link": "",
+  "linkCode": "https://github.com/ChimpsterMan/TheFinalStory"
+}
