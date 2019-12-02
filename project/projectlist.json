@@ -19,6 +19,7 @@
     "sfmlmaze.json",
     "javasnake.json",
     "javasnakeai.json",
-    "neatsnake.json"
+    "neatsnake.json",
+    "scoutingservice.json"
   ]
 }
