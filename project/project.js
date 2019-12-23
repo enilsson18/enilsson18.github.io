@@ -40,6 +40,8 @@ function updatePage(){
     document.getElementById('video').src = file.vid;
     if(file.vid == ""){
         document.getElementById('vidbox').style.display = "none";
+    } else {
+        document.getElementById('img').style.display = "none";
     }
     document.getElementById('description').innerText = file.description;
     document.getElementById('link').href = file.link;
