@@ -1,0 +1,11 @@
+{
+  "name": "Flappy Bird",
+  "filename": "sfmlflappybird",
+  "date": "12/30/19",
+  "author": "Erik Nilsson",
+  "img": "http://chimpsterman.me/pics/sfmlflappybird.png",
+  "vid": "",
+  "description": "A learning project for c++ and sfml. Uses classes and .href files. It is a standard Flappy bird game the player uses Space to flap and fly inbetween pipes. It started out as a project to use glider physics and be a very over complicated flappy bird game for fun. But sadly that was very hard so you can see the reminants of my attempts commented in the code.",
+  "link": "",
+  "linkCode": "https://github.com/ChimpsterMan/ComplexFlappyBird"
+}
