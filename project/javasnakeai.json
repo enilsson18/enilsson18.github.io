@@ -3,7 +3,7 @@
   "filename": "javasnakeai",
   "date": "7/18/28",
   "author": "Erik Nilsson",
-  "img": "http://chimpsterman.me/pics/javasnakeai.png",
+  "img": "http://emnilsson.com/pics/javasnakeai.png",
   "vid": "https://www.youtube.com/embed/MsE9GL_jeC0",
   "description": "A working machine learning snake ai program. It uses a basic neural network. uses console to set parameters. It was made in eclipse.",
   "link": "",

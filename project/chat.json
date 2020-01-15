@@ -3,9 +3,9 @@
   "filename": "chat",
   "date": "3/22/19",
   "author": "Erik Nilsson",
-  "img": "http://chimpsterman.me/pics/chat.png",
+  "img": "http://emnilsson.com/pics/chat.png",
   "vid": "",
   "description": "A multiplayer chat program made using node js and websockets. The chat program uses cookies to save the username of the person, autoscrolls with new messages, and shows the exact date the message was sent. It is currently running on a goorm server that I am running in a big object window on my website. I linked the code to the goorm server. It has one functional command /reload which refreshes all connected clients. There is a partially implemented but broken logging function aswell. The project was intended to be a learning experience on how to handle node, websockets, and make a simple multiplayer program from the ground.",
-  "link": "http://chimpsterman.me/chat",
+  "link": "http://emnilsson.com/chat",
   "linkCode": "https://github.com/ChimpsterMan/nodechat"
 }

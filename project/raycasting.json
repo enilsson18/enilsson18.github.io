@@ -3,9 +3,9 @@
   "filename": "raycasting",
   "date": "7/5/19",
   "author": "Erik Nilsson",
-  "img": "http://chimpsterman.me/pics/raycasting.png",
+  "img": "http://emnilsson.com/pics/raycasting.png",
   "vid": "",
   "description": "Raycasting FPS is made with html js and node. It was one of the more advanced projects I have done with js. There is currently 3 items including a pistol, knife, and fists. The bullets render onscreen when they are shot. The items also bob with movement in a players hands. Textures also render on the walls. The display includes health, ammo, and crossheir. the cursor locks onto screen for fps escape unlocks the cursor. ~ opens a menu showing the kills and names of each player. Players are shown as a mario image. This was originally supposed to be a simple learning experience with raycasting but I evolved it into a fps multiplayer game. I also was trying to learn how to handle player data packets in a multiplayer program. There are still a few bugs to be fixed but it is functional currently.",
-  "link": "http://chimpsterman.me/raycasting",
+  "link": "http://emnilsson.com/raycasting",
   "linkCode": "https://github.com/ChimpsterMan/raycaster"
 }

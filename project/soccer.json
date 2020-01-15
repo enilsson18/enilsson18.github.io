@@ -3,9 +3,9 @@
   "filename": "soccer",
   "date": "11/29/18",
   "author": "Erik Nilsson",
-  "img": "http://chimpsterman.me/pics/soccer.png",
+  "img": "http://emnilsson.com/pics/soccer.png",
   "vid": "",
   "description": "A attempt at making car physics in html js canvas that I transformed into a 2d soccer game. Its kinda like rocket league. The controls are wasd for one person and arrow keys for the other.",
-  "link": "http://chimpsterman.me/soccer",
+  "link": "http://emnilsson.com/soccer",
   "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/soccer"
 }

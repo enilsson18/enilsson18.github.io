@@ -3,7 +3,7 @@
   "filename": "machinelearningline",
   "date": "7/21/18",
   "author": "Erik Nilsson",
-  "img": "http://chimpsterman.me/pics/machinelearningline.png",
+  "img": "http://emnilsson.com/pics/machinelearningline.png",
   "vid": "",
   "description": "A machine learning line program that finds the line of best fit using gradient descent. Runs in eclipse with processing.",
   "link": "",

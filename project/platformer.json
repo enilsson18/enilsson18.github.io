@@ -3,9 +3,9 @@
   "filename": "platformer",
   "date": "4/2/19",
   "author": "Erik Nilsson",
-  "img": "http://chimpsterman.me/pics/platformer.png",
+  "img": "http://emnilsson.com/pics/platformer.png",
   "vid": "",
   "description": "The third node html js websocket project I made using live player updating and handling proper 2d physics. Standard wasd controls and press ~ to bring up menu of all online players. The program is adaptable to different maps. Just make a white and black collision map and sync it to a normal scene image to draw over it. The standard character is sans from Megalovania.",
-  "link": "http://chimpsterman.me/platformer",
+  "link": "http://emnilsson.com/platformer",
   "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/platformer"
 }

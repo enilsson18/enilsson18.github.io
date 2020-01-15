@@ -3,7 +3,7 @@
   "filename": "neatsnake",
   "date": "5/9/19",
   "author": "Erik Nilsson",
-  "img": "http://chimpsterman.me/pics/javaneatsnake.png",
+  "img": "http://emnilsson.com/pics/javaneatsnake.png",
   "vid": "",
   "description": "A machine learning attempt to make a snake ai using the neat algorithem. Final project of Ap CompSci A and it is formatted with class files very well. It ended up not working in the end. I was basically making it from scratch so... I got close but some data was messing up the learning aspect. The neural network manager however supports any type of network and even allows for unstructured ones to form in a type of web. This was intended to make it as successful as humanly possible since even the network changes. I may work on it in the future but as of now the learning portion has major bugs. It opens in eclipse and uses the processing library.",
   "link": "",

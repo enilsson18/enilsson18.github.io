@@ -3,9 +3,9 @@
   "filename": "ttt",
   "date": "2/18/19",
   "author": "Erik Nilsson",
-  "img": "http://chimpsterman.me/pics/ttt.png",
+  "img": "http://emnilsson.com/pics/ttt.png",
   "vid": "",
   "description": "The second node js html project I made. It is designed for 2 players. Throughout making it I learned how to handle unpredictable events the user can make like reseting the game if one player leaves.",
-  "link": "http://chimpsterman.me/ttt",
+  "link": "http://emnilsson.com/ttt",
   "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/ttt"
 }

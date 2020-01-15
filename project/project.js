@@ -32,7 +32,7 @@ function updatePage(){
     document.getElementById('img').src = file.img;
     if (file.img == ""){
         if (file.vid == ""){
-            document.getElementById('img').src = "http://chimpsterman.me/pics/noimagefound.png"
+            document.getElementById('img').src = "http://emnilsson.com/pics/noimagefound.png"
         } else {
             document.getElementById('img').remove();
         }

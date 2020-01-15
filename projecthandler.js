@@ -67,7 +67,7 @@ function processFile(file){
             element21.setAttribute("href", "/project/project.html?p=" + file.filename + "");
             element22.setAttribute("class", "d-block w-100");
             if (file.img == "") {
-                element22.setAttribute("src", "http://chimpsterman.me/pics/noimagefound.png");
+                element22.setAttribute("src", "http://emnilsson.com/pics/noimagefound.png");
             } else {
                 element22.setAttribute("src", "" + file.img + "");
             }
@@ -85,7 +85,7 @@ function processFile(file){
         element33.setAttribute("class", "d-block w-100");
         element33.setAttribute("src", ""+file.img+"");
         if (file.img == ""){
-            element33.setAttribute("src", "http://chimpsterman.me/pics/noimagefound.png");
+            element33.setAttribute("src", "http://emnilsson.com/pics/noimagefound.png");
         }
         element31.appendChild(element32);
         element31.appendChild(element33);

@@ -3,9 +3,9 @@
     "filename": "tetris",
     "date": "12/16/2018",
     "author": "Erik Nilsson",
-    "img": "http://chimpsterman.me/pics/tetris.png",
+    "img": "http://emnilsson.com/pics/tetris.png",
     "vid": "",
     "description": "A simple web tetris program because I was bored in history class. Made during my somewhat early learning of js canvas.",
-    "link": "http://chimpsterman.me/tetris",
+    "link": "http://emnilsson.com/tetris",
     "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/tetris"
 }

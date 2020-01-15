@@ -3,9 +3,9 @@
   "filename": "scoutingservice",
   "date": "12/1/19",
   "author": "Erik Nilsson",
-  "img": "http://chimpsterman.me/pics/scoutingservice.png",
+  "img": "http://emnilsson.com/pics/scoutingservice.png",
   "vid": "",
   "description": "A Scouting app for the robotics team designed for mobile phones. They enter various information about the teams and it is all dumped into a google spreadsheet where the data can be analysed. It was barebones at the time the base code was written so I'm not sure if I have updated it yet for proper use. Written in html,js,css, and node with the google sheets api.",
-  "link": "http://chimpsterman.me/scoutingservice",
+  "link": "http://emnilsson.com/scoutingservice",
   "linkCode": "https://github.com/ChimpsterMan/scoutingservice"
 }
