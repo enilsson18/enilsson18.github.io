@@ -1,0 +1,11 @@
+{
+  "name": "Checkers",
+  "filename": "sfmlcheckers",
+  "date": "2/1/2020",
+  "author": "Erik Nilsson",
+  "img": "http://emnilsson.com/pics/checkers.png",
+  "vid": "",
+  "description": "A simple sfml c++ checkers program. In order to download and access the project go to the linked code and download it. Then look in the release folder for the Checkers.exe file. For this project I learned to use pointers more effectivly and become more proffessional with my style of coding using a lot of encapsulation.",
+  "link": "",
+  "linkCode": "https://github.com/ChimpsterMan/SFML-Checkers"
+}

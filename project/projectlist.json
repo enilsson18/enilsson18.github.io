@@ -21,6 +21,7 @@
     "javasnakeai.json",
     "neatsnake.json",
     "scoutingservice.json",
-    "sfmlflappybird.json"
+    "sfmlflappybird.json",
+    "sfmlcheckers.json"
   ]
 }
