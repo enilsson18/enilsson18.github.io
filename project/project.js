@@ -37,17 +37,21 @@ function updatePage(){
             document.getElementById('img').remove();
         }
     }
-    document.getElementById('video').src = file.vid;
-    if(file.vid == ""){
-        document.getElementById('vidbox').style.display = "none";
-    } else {
-        document.getElementById('img').style.display = "none";
-    }
+
+    //description
     document.getElementById('description').innerText = file.description;
     document.getElementById('link').href = file.link;
     if (file.link == "") {
         document.getElementById('link').innerText = "Not Viewable in Browser";
     }
     document.getElementById('linkcode').href = file.linkCode;
+
+    //youtube video file
+    document.getElementById('video').src = file.vid;
+    if(file.vid == ""){
+        document.getElementById('vidbox').style.display = "none";
+    } else {
+        document.getElementById('img').style.display = "none";
+    }
 }
 
