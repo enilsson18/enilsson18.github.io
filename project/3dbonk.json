@@ -1,0 +1,11 @@
+{
+  "name": "3D Bonk",
+  "filename": "3dbonk",
+  "date": "3/11/2020",
+  "author": "Erik Nilsson",
+  "img": "http://emnilsson.com/pics/3dbonk.png",
+  "vid": "",
+  "description": "3D Bonk is a learning project for unity. It is an incomplete parkour racing game. You simply play through the available levels and it does support local lan multiplayer. To play simply download and run the .exe file. Then once open, press host server and run through the blue teleportation gate to get to the main game. The controls are wasd for movement along with Q and E for wall running spin, ctrl is slow down and shift is the stick key which will make you not bounce. there is controller support aswell. I had a lot of fun making this and I might come back to it in the future I just got very busy with school. It is programmed with c# and the unity 4 editor. I also did use blender for some of the curve assets.",
+  "link": "https://github.com/ChimpsterMan/3d-Bonk/blob/master/Build/3D%20Bonk_Data.zip",
+  "linkCode": "https://github.com/ChimpsterMan/3d-Bonk"
+}

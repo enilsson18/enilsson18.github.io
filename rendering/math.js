@@ -94,7 +94,7 @@ function get2dCoords(camera, vertex){
      */
 
     //it took me 6 hours to make this if statement UGH
-    if (d.z > 0) {
+    if (d.z >= 0) {
         return new Point(x, y, dist);
     } else {
         return null;

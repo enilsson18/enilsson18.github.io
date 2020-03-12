@@ -10,8 +10,13 @@ function generateMap() {
     var scale = 0.5;
 
     Cube.scale(scale,scale,scale);
+    Cube.scale(10,1,15);
 
-    var length = 0;
+    blocks.push(new Block("grass",0,0,0));
+
+    Cube.scale(0.1,1,0.0666);
+
+    /*var length = 0;
     for (var i = 0; i < 1; i++) {
         for (var j = -5; j <= 5; j++) {
             for (var g = -5; g <= 15; g++) {
@@ -24,7 +29,7 @@ function generateMap() {
                 //length += 1;
             }
         }
-    }
+    }*/
 }
 
 //specify base of the trunk
