@@ -23,6 +23,7 @@
     "scoutingservice.json",
     "sfmlflappybird.json",
     "sfmlcheckers.json",
-    "3dbonk.json"
+    "3dbonk.json",
+    "particlesim.json"
   ]
 }

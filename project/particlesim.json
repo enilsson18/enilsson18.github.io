@@ -1,0 +1,11 @@
+{
+  "name": "Particle Simulator",
+  "filename": "particlesim",
+  "date": "3/15/20",
+  "author": "Erik Nilsson",
+  "img": "http://emnilsson.com/pics/particlesim.png",
+  "vid": "",
+  "description": "A web based html, css, javascript, and canvas particle collision simulator. Does not work completly and glitches when gravity is enabled for a while. But served as a learning project for applications of formulas from wiki I do not understand into code. It was made for fun feel free to copy and try to make it better. The properties of the particles upon spawning such as size are variable and can be changed in the particle.js file at the top or when new particles are initialized. Object oriented design.",
+  "link": "http://emnilsson.com/particlesim",
+  "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/particlesim"
+}

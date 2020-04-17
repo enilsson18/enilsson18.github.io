@@ -1,0 +1,25 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  color: lightgrey;
+}
+
+html {
+  background-color: #272121;
+}
+
+body {
+  text-align: center;
+  overflow: hidden;
+}
+
+canvas {
+  border: solid black 2px;
+  display:block;
+  margin: auto;
+}
+
+h1 {
+  margin: 15px;
+  font-size: 50px;
+}
