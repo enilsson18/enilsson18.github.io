@@ -6,17 +6,23 @@ var grassTexture = new Texture("assets/Grass_Block.png");
 
 var blocks = [];
 
-function generateMap() {
+function terrainGenerator() {
+    
+}
+
+function generateBaseMap() {
     var scale = 0.5;
-
     Cube.scale(scale,scale,scale);
-    Cube.scale(10,1,15);
 
-    blocks.push(new Block("grass",0,0,0));
+    //single ground
+    //Cube.scale(10,1,15);
 
-    Cube.scale(0.1,1,0.0666);
+    //blocks.push(new Block("grass",0,0,0));
 
-    /*var length = 0;
+    //Cube.scale(0.1,1,0.0666);
+
+    //normal scale flat ground
+    var length = 0;
     for (var i = 0; i < 1; i++) {
         for (var j = -5; j <= 5; j++) {
             for (var g = -5; g <= 15; g++) {
@@ -29,7 +35,7 @@ function generateMap() {
                 //length += 1;
             }
         }
-    }*/
+    }
 }
 
 //specify base of the trunk

@@ -11,12 +11,12 @@ if (window.innerWidth >= window.innerHeight) {
     canvas.width = window.innerWidth;
 }
 
-var fps = 60;
+var fps = 40;
 var loop = setInterval(main, 1000/fps);
 var player = new Player(0,0,10,0,180,0);
 var scene = [];
 
-generateMap();
+generateBaseMap();
 generateTree(0,0,0);
 scene = getBlockModels();
 
