@@ -1,0 +1,11 @@
+{
+  "name": "OpenGL Minecraft",
+  "filename": "openglminecraft",
+  "date": "8/15/2020",
+  "author": "Erik Nilsson",
+  "img": "http://emnilsson.com/pics/openglminecraft.png",
+  "vid": "",
+  "description": "A project to learn a little bit more about how rendering works and practice to improve my object oriented code and organization. I used glad and GLFW for opengl rendering framework and loading images. The two major components of the project were the renderer and perlin noise for terrain generation. The renderer allows for varying images and block types to be used and positioned. There are realistic shadows and lighting as well. In working on this project i learned how to work with different framebuffers, vertex buffer objects, and shaders(glsl). In order to make the renderer run faster I used several optimization techniques to hide hidden faces of the blocks and render them in sets to improve performance and allow for much more massive scenes. The light and shadows use a point light of my own making and features variable biasing to remove acane and pcf averaging to smooth out the shadow resolution. I could write a whole paper on all the things involved with this but I am doing this for fun and am too lazy. To make it more interesting if you would like to learn more about it, feel free to contact me and i will be more than happy to talk. Please also check out the video preview made by my friend Sandy.",
+  "link": "https://github.com/ChimpsterMan/OpenGLMinecraft/blob/master/OpenGlMinecraftEXE.zip",
+  "linkCode": "https://github.com/ChimpsterMan/OpenGLMinecraft"
+}
