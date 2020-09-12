@@ -5,7 +5,7 @@
   "author": "Erik Nilsson",
   "img": "http://emnilsson.com/pics/pong.png",
   "vid": "",
-  "description": "The first game I made with python using pygame. Requires 2 players and player 1 uses the keys w and s. player 2 uses keys up and down. I used object oriented programming in python and I have one response. I hate the global variable system.",
+  "description": "The first game I made with python using PYGame. Requires 2 players and player 1 uses the keys w and s. player 2 uses keys up and down. I used object-oriented programming in python and I have one response. I hate the global variable system.",
   "link": "",
   "linkCode": "https://github.com/ChimpsterMan/Pong"
 }

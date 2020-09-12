@@ -5,7 +5,6 @@
   "author": "Erik Nilsson",
   "img": "http://emnilsson.com/pics/minecraft.png",
   "vid": "",
-  "description": "A simple web js program using my 3d js engine to render a big scene with multiple models and new controls. It uses the rendering files from the original rendering project which is also posted on my website. cursor or arrowkeys to look and wasd to move with space to jump.",
-  "link": "http://emnilsson.com/minecraft",
+  "description": "A simple web js program using my 3d js engine to render a big scene with multiple models and new controls. It uses the rendering files from the original rendering project which is also posted on my website. cursor or arrow keys to look and was to move with space to jump.",  "link": "http://emnilsson.com/minecraft",
   "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/minecraft"
 }

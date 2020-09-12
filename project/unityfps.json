@@ -5,7 +5,6 @@
   "author": "Erik Nilsson",
   "img": "http://emnilsson.com/pics/unityfps.png",
   "vid": "https://www.youtube.com/embed/b0PjmJGsues",
-  "description": "The first major project I made in unity. It is a fps against a simple ai. I tried to implemement multiplayer but it did not work sadly. It uses c#.",
-  "link": "",
+  "description": "The first major project I made in unity. It is an fps against a simple ai. I tried to implement multiplayer but it did not work sadly. It uses c#.",  "link": "",
   "linkCode": "https://drive.google.com/file/d/1xC7He2_9Ncz2BQ8fPRqQxZrZ8k-SgB2M/view?usp=sharing"
 }

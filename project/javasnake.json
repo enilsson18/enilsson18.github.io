@@ -5,7 +5,6 @@
   "author": "Erik Nilsson",
   "img": "http://emnilsson.com/pics/javasnake.png",
   "vid": "nRsfvdGq2LA",
-  "description": "A java snake game I made as my final project for ap comp sci. It has nice menu and smooth controls. It is made in the processing module.",
-  "link": "",
+  "description": "A classic java snake game I made as my final project for ap comp sci principles. It has a nice menu and smooth controls. It is made in the processing module.",  "link": "",
   "linkCode": "https://github.com/ChimpsterMan/JavaSnake"
 }

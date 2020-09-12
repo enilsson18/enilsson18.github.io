@@ -5,7 +5,6 @@
   "author": "Erik Nilsson",
   "img": "",
   "vid": "",
-  "description": "A game where you are a cat jumpin around onto counters and stuff. You even can dodge arrows. It was made in java processing with gifs. In order to open you need the processing module.",
-  "link": "",
+  "description": "A game where you are a cat jumping around onto counters and stuff. You even can dodge arrows. It was made in java processing with gifs. To open you need the processing module.",  "link": "",
   "linkCode": "https://github.com/ChimpsterMan/CatProject"
 }

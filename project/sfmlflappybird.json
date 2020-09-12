@@ -5,7 +5,7 @@
   "author": "Erik Nilsson",
   "img": "http://emnilsson.com/pics/sfmlflappybird.png",
   "vid": "",
-  "description": "A learning project for c++ and sfml. Uses classes and .href files. It is a standard Flappy bird game the player uses Space to flap and fly inbetween pipes. It started out as a project to use glider physics and be a very over complicated flappy bird game for fun. But sadly that was very hard so you can see the reminants of my attempts commented in the code.",
+  "description": "A learning project for c++ and SFML. Uses classes and .href files. It is a standard Flappy bird game the player uses Space to flap and fly in between pipes. It started as a project to use glider physics and would be very over-complicated for fun. But sadly that was very hard so you can see the remnants of my attempts commented in the code.",
   "link": "",
   "linkCode": "https://github.com/ChimpsterMan/ComplexFlappyBird"
 }

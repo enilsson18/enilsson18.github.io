@@ -5,7 +5,7 @@
   "author": "Erik Nilsson",
   "img": "http://emnilsson.com/pics/snake.png",
   "vid": "",
-  "description": "The first js canvas html game project I ever made. I like to make snake in a new language to understand it for the first time. Just use wasd for controls instructions are on the side of the screen.",
+  "description": "The first js canvas HTML game project I ever made. I like to make a snake in a new language to understand it for the first time. Just use WASD for controls instructions are on the side of the screen.",
   "link": "http://emnilsson.com/snake",
   "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/snake"
 }
