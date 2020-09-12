@@ -61,7 +61,7 @@ function processFile(file){
             //carousel list
             element1.setAttribute("data-target", "#featurebar");
             element1.setAttribute("data-slide-to", carouselCount);
-            document.getElementById("carousel-list").prepend(element1);
+            document.getElementById("carousel-list").appendChild(element1);
 
             //carousel content
             element21.setAttribute("href", "/project/project.html?p=" + file.filename + "");
@@ -77,7 +77,7 @@ function processFile(file){
 
         element21.appendChild(element22);
         element2.appendChild(element21);
-        document.getElementById("carousel-content").prepend(element2);
+        document.getElementById("carousel-content").appendChild(element2);
 
         //project list
         element31.setAttribute("href", "/project/project.html?p=" + file.filename + "");
@@ -90,7 +90,7 @@ function processFile(file){
         element31.appendChild(element32);
         element31.appendChild(element33);
         element3.appendChild(element31);
-        document.getElementById("projectlist").prepend(element3);
+        document.getElementById("projectlist").appendChild(element3);
 
         projectCount += 1;
     }
