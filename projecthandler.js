@@ -49,6 +49,7 @@ function processFile(file){
         var element3 = document.createElement("li");
         var element31 = document.createElement("a");
         var element32 = document.createElement("h3");
+        var element32_5 = document.createElement("h4");
         var element33 = document.createElement("img");
 
         if (file.img != "") {
@@ -82,12 +83,14 @@ function processFile(file){
         //project list
         element31.setAttribute("href", "/project/project.html?p=" + file.filename + "");
         element32.innerText = file.name;
+        element32_5.innerText = file.date;
         element33.setAttribute("class", "d-block w-100");
         element33.setAttribute("src", ""+file.img+"");
         if (file.img == ""){
             element33.setAttribute("src", "http://emnilsson.com/pics/noimagefound.png");
         }
         element31.appendChild(element32);
+        element31.appendChild(element32_5);
         element31.appendChild(element33);
         element3.appendChild(element31);
         document.getElementById("projectlist").appendChild(element3);
