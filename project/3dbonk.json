@@ -1,10 +1,10 @@
 {
   "name": "3D Bonk",
   "filename": "3dbonk",
-  "date": "3/11/2020\nupdated:4/15/20",
+  "date": "3/11/2020",
   "author": "Erik Nilsson",
   "img": "http://emnilsson.com/pics/3dbonk.png",
   "vid": "",
-  "description": "3D Bonk is a learning project for unity. It is an incomplete parkour racing game. You can play through various difficulty levels. It does also support local LAN and online multiplayer on a race track. Just have one computer port forward port:25565 and host than the other players simply join by typing in the public IP address of the host. It has a testing map, a training/level based map, and a racing map. To play simply download and run the .exe file. Then once open, the press host server and run through the blue teleportation gate to get to the main game. The controls are WASD for movement along with Q and E for wall running spin, CTRL is slow down and SHIFT is the Stick key which will make you not bounce. there is controller support as well. I had a lot of fun making this and I might come back to it in the future I just got very busy with school. It is programmed with c# and the Unity 4 Editor. I also did use Blender for some of the curve assets.",  "link": "https://github.com/ChimpsterMan/3d-Bonk/blob/master/Build/3D%20Bonk_Data.zip",
+  "description": "(updated:4/15/20)\n3D Bonk is a learning project for unity. It is an incomplete parkour racing game. You can play through various difficulty levels. It does also support local LAN and online multiplayer on a race track. Just have one computer port forward port:25565 and host than the other players simply join by typing in the public IP address of the host. It has a testing map, a training/level based map, and a racing map. To play simply download and run the .exe file. Then once open, the press host server and run through the blue teleportation gate to get to the main game. The controls are WASD for movement along with Q and E for wall running spin, CTRL is slow down and SHIFT is the Stick key which will make you not bounce. there is controller support as well. I had a lot of fun making this and I might come back to it in the future I just got very busy with school. It is programmed with c# and the Unity 4 Editor. I also did use Blender for some of the curve assets.",  "link": "https://github.com/ChimpsterMan/3d-Bonk/blob/master/Build/3D%20Bonk_Data.zip",
   "linkCode": "https://github.com/ChimpsterMan/3d-Bonk"
 }
