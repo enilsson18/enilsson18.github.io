@@ -1,0 +1,11 @@
+{
+  "name": "Sling Arena",
+  "filename": "slingarena",
+  "date": "10/23/2020",
+  "author": "Erik Nilsson",
+  "img": "http://emnilsson.com/pics/slingarena.png",
+  "vid": "https://www.youtube.com/embed/8ZbYukuX-2U",
+  "description": "Sling Arena is a Unity game where the player flings a ball around the screen to kill the red enemies. To open the door and escape to the next level, all enemies in the room must be killed. You must try to do so within 10 seconds or the player must start over again and retry. Some enemies will try to run while others will attack in various ways depending on their type. The red enemies can kill you with their pink blades so make sure to avoid them. I made this to get experience working with ios apps and unity. I had to use a VM to use mac software and upload the ios builds to my iPhone for playtesting. While the iPhone is the recommended platform, there is also a Windows Build for people to try as well. To try it out on your PC, click the Link To Project button and download the file. It contains an EXE file that you can run.",
+  "link": "https://github.com/ChimpsterMan/SlingArena/blob/master/Sling%20Arena.zip",
+  "linkCode": "https://github.com/ChimpsterMan/SlingArena"
+}
