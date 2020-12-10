@@ -82,7 +82,7 @@ hr.major {
     width: 100%;
     height: 100vh;
     padding-top: 40vh;
-    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("http://emnilsson.com/pics/waterbg.png") no-repeat fixed center;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("http://emnilsson.com/pics/technobg.png") no-repeat fixed center;
     text-align: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
