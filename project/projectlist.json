@@ -1,6 +1,7 @@
 {
   "name": "projectlist",
   "projects": [
+    "3dfourconnect.json",
     "slingarena.json",
     "openglminecraft.json",
     "particlesim.json",
