@@ -4,7 +4,8 @@
   "date": "10/30/19",
   "author": "Erik Nilsson",
   "img": "http://emnilsson.com/pics/sfmlmaze.png",
-  "vid": "",
-  "description": "A C++ maze generator using recursion. Run in debugging mode in studios 2017 or compatible. Debugging mode is needed for proper live maze generation. The process is scalable to any size as long as you are willing to wait that long and your screen is big enough :). You can load and save mazes that you like so you don't have to remake a maze every time.",  "link": "",
+  "vid": "https://www.youtube.com/embed/NRwjAkP1FTo",
+  "description": "A C++ maze generator using recursion. The process is scalable to any size as long as you are willing to wait that long and your screen is big enough :). You can load and save mazes that you like so you don't have to remake a maze every time.",
+  "link": "https://github.com/ChimpsterMan/SFMLMaze/blob/master/SFMLMazeEXE.zip",
   "linkCode": "https://github.com/ChimpsterMan/SFMLMaze"
 }
