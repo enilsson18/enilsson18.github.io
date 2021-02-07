@@ -1,0 +1,11 @@
+{
+  "name": "3D Mill",
+  "filename": "3dmill",
+  "date": "2/7/2021",
+  "author": "Erik Nilsson",
+  "img": "http://emnilsson.com/pics/3dmill.png",
+  "vid": "",
+  "description": "A 3D Online version of a game my dad invented. It's made in visual studios with mainly OpenGL and SteamNetworkingSockets.",
+  "link": "https://github.com/ChimpsterMan/3DMill/blob/master/3DMillEXE.zip",
+  "linkCode": "https://github.com/ChimpsterMan/3DMill"
+}
