@@ -1,0 +1,11 @@
+{
+  "name": "Unfolding Shapes",
+  "filename": "unfoldingshapes",
+  "date": "6/3/2021",
+  "author": "Erik Nilsson",
+  "img": "http://emnilsson.com/pics/unfoldingshapespreview.png",
+  "vid": "https://www.youtube.com/embed/0AyicUmNNFQ",
+  "description": "This project aims to take in 3d models and unwrap them onto a 2d plane in one piece with an animation. In other words, it is creating a geometric net of any 3d model. The project also contains a UI that can manipulate the settings and conditions of the pattern formed by the unfolded shape and can control the animation style of the transformation between the shape and the unfold. The project was written in C++ using OpenGL, GLFW, and QT. The main challenge in development was creating the OBJ file parser to load in all the faces and joints for each shape to transform about. Though calculating the unfolding patterns was no easy task as well. See README in the linked github code for more information.",
+  "link": "https://github.com/ChimpsterMan/UnfoldingShapes/releases",
+  "linkCode": "https://github.com/ChimpsterMan/UnfoldingShapes"
+}
