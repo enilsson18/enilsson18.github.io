@@ -6,5 +6,5 @@
   "img": "http://emnilsson.com/pics/checkers.png",
   "vid": "",
   "description": "A simple SFML c++ checkers program. To download and access the project go to the linked code and download it. Then look in the release folder for the Checkers.exe file. For this project, I learned to use pointers more effectively and become more professional with my style of coding using a lot of encapsulation.",  "link": "",
-  "linkCode": "https://github.com/ChimpsterMan/SFML-Checkers"
+  "linkCode": "https://github.com/enilsson18/SFML-Checkers"
 }

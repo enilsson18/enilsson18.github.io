@@ -7,5 +7,5 @@
   "vid": "",
   "description": "A Scouting app for the robotics team designed for mobile phones. They enter various information about the teams and it is all dumped into a google spreadsheet where the data can be analyzed. It was barebones at the time the base code was written so I'm not sure if I have updated it yet for proper use. Written in HTML, CSS, JS, and Node with the google sheets API.",
   "link": "http://emnilsson.com/scoutingservice",
-  "linkCode": "https://github.com/ChimpsterMan/scoutingservice"
+  "linkCode": "https://github.com/enilsson18/scoutingservice"
 }

@@ -6,5 +6,5 @@
   "img": "http://emnilsson.com/pics/ttt.png",
   "vid": "",
   "description": "The second node js HTML project I made with websockets. It is designed for 2 players at a time over the internet. So two people across the world could play together. Throughout making it, I learned how to handle unpredictable events the user can make like resetting the game if one player leaves.",  "link": "http://emnilsson.com/ttt",
-  "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/ttt"
+  "linkCode": "https://github.com/enilsson18/enilsson18.github.io/tree/master/ttt"
 }

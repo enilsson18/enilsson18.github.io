@@ -6,5 +6,5 @@
   "img": "http://emnilsson.com/pics/chat.png",
   "vid": "",
   "description": "A multiplayer chat program, made using node js and WebSockets. The chat program uses cookies to save the username of the person, auto scrolls with new messages and shows the exact date the message was sent. It is currently running on a good server that I am running in a big object window on my website. I linked the code to the form server. It has one functional command /reload which refreshes all connected clients. There is a partially implemented but broken logging function as well. The project was intended to be a learning experience on how to handle Node, WebSockets, and make a simple multiplayer program from the ground up.",  "link": "http://emnilsson.com/chat",
-  "linkCode": "https://github.com/ChimpsterMan/nodechat"
+  "linkCode": "https://github.com/enilsson18/nodechat"
 }

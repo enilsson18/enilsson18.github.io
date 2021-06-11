@@ -7,5 +7,5 @@
   "vid": "",
   "description": "A web-based HTML, CSS, Javascript, and JS Canvas particle collision simulator. Does not work completely and glitches when gravity is enabled for a while. But served as a learning project for applications of formulas from Wikipedia that (That I did not understand at the time) into code. It was made for a fun feel free to copy and try to make it better. The properties of the particles upon spawning such as size are variable and can be changed in the particle.js file at the top or when new particles are initialized. Object-oriented design.",
   "link": "http://emnilsson.com/particlesim",
-  "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/particlesim"
+  "linkCode": "https://github.com/enilsson18/enilsson18.github.io/tree/master/particlesim"
 }

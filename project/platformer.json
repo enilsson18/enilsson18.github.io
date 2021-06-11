@@ -6,5 +6,5 @@
   "img": "http://emnilsson.com/pics/platformer.png",
   "vid": "",
   "description": "The third node HTML js WebSocket project I made using live player updating and handling proper 2d physics. Standard WASD controls and press ~ to bring up a menu of all online players. The program is adaptable to different maps. Just make a white and black collision map and sync it to a normal scene image to draw over it. The standard character is sans from Megalovania.",  "link": "http://emnilsson.com/platformer",
-  "linkCode": "https://github.com/ChimpsterMan/chimpsterman.github.io/tree/master/platformer"
+  "linkCode": "https://github.com/enilsson18/enilsson18.github.io/tree/master/platformer"
 }
