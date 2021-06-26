@@ -6,6 +6,6 @@
   "img": "http://emnilsson.com/pics/3dmill.png",
   "vid": "",
   "description": "A 3D Online version of a game my dad invented. It's made in visual studios with mainly OpenGL and SteamNetworkingSockets.",
-  "link": "https://github.com/enilsson18/3DMill/blob/master/3DMillEXE.zip",
+  "link": "https://github.com/enilsson18/3DMill/releases",
   "linkCode": "https://github.com/enilsson18/3DMill"
 }

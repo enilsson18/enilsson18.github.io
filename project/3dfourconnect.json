@@ -6,6 +6,6 @@
   "img": "http://emnilsson.com/pics/3dfourconnect.png",
   "vid": "",
   "description": "An online version of the game my dad made called 3D Four Connect. Imagine Tic-Tac-Toe but in three dimensions and with four in a row instead of three. The players must confuse and misdirect their opponent while subtly making a path to victory. It currently supports online and local playing. Simply follow the instructions in the launcher to choose which mode you want to play. It is also important to note that the servers do require port forwarding. The project was made using C++, OpenGL, GLFW, Assimp model loader, and Game Networking Sockets by Valve. The current graphics engine also supports .obj model files, texture, specular maps, and simple materials. For instructions on how to setup the project and associated libraries on your computer, please refer to the readme in the git repo. Feel free to contact me with any questions.",
-  "link": "https://github.com/enilsson18/3DFourConnect/blob/master/3DFourConnectEXE.zip",
+  "link": "https://github.com/enilsson18/3DFourConnect/releases",
   "linkCode": "https://github.com/enilsson18/3DFourConnect"
 }

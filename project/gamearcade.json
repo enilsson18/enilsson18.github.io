@@ -6,6 +6,6 @@
   "img": "http://emnilsson.com/pics/gamearcade.png",
   "vid": "https://www.youtube.com/embed/UKdc8oXH59s",
   "description": "A compilation of all my early 2d c++ projects in the console. All of the console projects were 2d platformers that used the clear console command as a screen refresh. It was a primitive time for me and it is funny to look back upon. Please watch the youtube video showcasing them. Most either use was or arrow key controls. The git files have a .exe to run on windows.",
-  "link": "",
+  "link": "https://github.com/enilsson18/GameArcade/releases",
   "linkCode": "https://github.com/enilsson18/GameArcade"
 }
