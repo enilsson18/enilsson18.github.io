@@ -1,0 +1,11 @@
+{
+  "name": "Inc Fluid Sim",
+  "filename": "incfluidsim",
+  "date": "7/19/2021",
+  "author": "Erik Nilsson",
+  "img": "http://emnilsson.com/pics/incfluidsim.png",
+  "vid": "",
+  "description": "This Project was made in C++ through Visual Studios with the help of OpenGL and GLFW. The goal of the project is to implement an incompressible fluid simulator and put a unique spin on it. Please see the README in the project files for more information.",
+  "link": "https://github.com/enilsson18/IncompressibleFluidSimulation/releases",
+  "linkCode": "https://github.com/enilsson18/IncompressibleFluidSimulation"
+}
