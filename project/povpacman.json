@@ -1,0 +1,11 @@
+{
+  "name": "Pov Pacman",
+  "filename": "povpacman",
+  "date": "12/9/2021",
+  "author": "Erik Nilsson",
+  "img": "http://emnilsson.com/pics/povpacman.png",
+  "vid": "",
+  "description": "My group's Software Development Project for Fundamentals of Engineering at The Ohio State University. The entire project is written in matlab. Please see the link to the project to read more about how the code was developed. Additionally, our group advanced to the top 5 of 423 other teams in the class.",
+  "link": "https://u.osu.edu/fe1181au21sec28303m/",
+  "linkCode": "https://github.com/enilsson18/SDP-ENGR-1181/tree/master/POV%20PacMan"
+}
