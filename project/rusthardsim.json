@@ -1,0 +1,11 @@
+{
+    "name": "Rust Rigid Body",
+    "filename": "rusthardsim",
+    "date": "20/2/2022",
+    "author": "Erik Nilsson",
+    "img": "http://emnilsson.com/pics/rusthardsim.png",
+    "vid": "https://www.youtube.com/embed/3n438vpGl5g",
+    "description": "Rust Rigid Body is a learning project where I attempted to make an interactive constraint based rigid body physics simulation in Rust. I discontinued the project during debugging due to time constraints.",
+    "link": "https://youtu.be/3n438vpGl5g",
+    "linkCode": "https://github.com/enilsson18/Rust-Hard-Physics-Sim"
+  }

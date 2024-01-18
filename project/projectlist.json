@@ -1,6 +1,7 @@
 {
   "name": "projectlist",
   "projects": [
+    "rusthardsim.json",
     "povpacman.json",
     "incfluidsim.json",
     "unfoldingshapes.json",
