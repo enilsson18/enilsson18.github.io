@@ -1,0 +1,11 @@
+{
+    "name": "Blungeon Slayer",
+    "filename": "bslayer",
+    "date": "12/4/2023",
+    "author": "Erik Nilsson",
+    "img": "http://emnilsson.com/pics/bslayer.png",
+    "vid": "",
+    "description": "The Final Project for our Game Development class CSE 3902 at OSU. We worked in a team of 7 to create this Zelda remake over the course of the semester. The game is written in C# and is rendered by MonoGame. The goal of this project was to practice AGILE Development techniques. As of now the code is not available.",
+    "link": "",
+    "linkCode": ""
+  }
